@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanctuary — Pastoral Decision Support</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --blue:    #002868;
+            --red:     #BF0A30;
+            --red-dark:#a00828;
+            --dark:    #111318;
+            --surface: #1a1d24;
+            --border:  #2a2d35;
+            --text:    #e8e8e8;
+            --muted:   #888;
+            --faint:   #444;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background: var(--blue);
+            color: var(--text);
+            height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* ── HEADER ──────────────────────────────────────────────── */
+        .header {
+            text-align: center;
+            padding: 24px 20px 16px;
+            flex-shrink: 0;
+            border-bottom: 1px solid rgba(191,10,48,0.2);
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            color: var(--red);
+            letter-spacing: 4px;
+            font-weight: normal;
+        }
+
+        .header p {
+            color: var(--muted);
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-top: 4px;
+        }
+
+        /* ── CHAT AREA ───────────────────────────────────────────── */
+        .chat-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            scroll-behavior: smooth;
+        }
+
+        /* ── CENTERED WELCOME STATE ──────────────────────────────── */
+        /* When no messages exist, content is vertically centered.
+           Once messages appear, it switches to top-aligned (normal scroll). */
+        .chat-area.empty {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-area.empty .welcome {
+            text-align: center;
+            max-width: 480px;
+        }
+
+        .welcome-title {
+            font-size: 1.1rem;
+            color: var(--muted);
+            font-style: italic;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .welcome-suggestions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .suggestion {
+            padding: 12px 16px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--muted);
+            font-family: Georgia, serif;
+            font-size: 0.85rem;
+            font-style: italic;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.15s;
+        }
+
+        .suggestion:hover {
+            border-color: var(--red);
+            color: var(--text);
+            background: rgba(191,10,48,0.08);
+        }
+
+        /* ── MESSAGES ────────────────────────────────────────────── */
+        .messages {
+            padding: 24px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .message {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message.pastor {
+            align-items: flex-end;
+        }
+
+        .message.sanctuary {
+            align-items: flex-start;
+        }
+
+        .message-label {
+            font-size: 0.7rem;
+            color: var(--faint);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .message-bubble {
+            max-width: 88%;
+            padding: 14px 18px;
+            line-height: 1.75;
+            font-size: 0.93rem;
+            border-radius: 2px;
+        }
+
+        .message.pastor .message-bubble {
+            background: var(--red);
+            color: #fff;
+            border-radius: 8px 8px 2px 8px;
+        }
+
+        .message.sanctuary .message-bubble {
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--red);
+            border-radius: 2px 8px 8px 8px;
+        }
+
+        .message-meta {
+            font-size: 0.7rem;
+            color: var(--faint);
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        /* ── TYPING INDICATOR ────────────────────────────────────── */
+        .typing {
+            display: none;
+            align-items: flex-start;
+            flex-direction: column;
+            padding: 0 0 8px;
+            width: 100%;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .typing-label {
+            font-size: 0.7rem;
+            color: var(--faint);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .typing-bubble {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--red);
+            border-radius: 2px 8px 8px 8px;
+            padding: 12px 18px;
+            color: var(--red);
+            font-style: italic;
+            font-size: 0.85rem;
+        }
+
+        /* ── VERSE DISPLAY ───────────────────────────────────────── */
+        /* Fixed height — never shifts layout as verses rotate */
+        .verse-display {
+            display: none;
+            text-align: center;
+            height: 52px;
+            overflow: hidden;
+            padding: 8px 20px;
+            font-style: italic;
+            color: #777;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            flex-shrink: 0;
+        }
+
+        /* ── INPUT AREA ──────────────────────────────────────────── */
+        .input-area {
+            flex-shrink: 0;
+            padding: 12px 20px 16px;
+            background: var(--blue);
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .input-wrapper {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* Main input row — textarea + send button */
+        .input-row {
+            display: flex;
+            gap: 8px;
+            align-items: flex-end;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 8px 8px 8px 14px;
+            transition: border-color 0.2s;
+        }
+
+        .input-row:focus-within {
+            border-color: var(--red);
+        }
+
+        textarea {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--text);
+            font-family: Georgia, serif;
+            font-size: 0.93rem;
+            resize: none;
+            min-height: 24px;
+            max-height: 140px;
+            line-height: 1.5;
+            padding: 4px 0;
+        }
+
+        textarea::placeholder { color: var(--faint); }
+
+        /* Right side of input — tier selector + send button */
+        .input-controls {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+            flex-shrink: 0;
+        }
+
+        /* Tier dropdown — lives inside the input box */
+        .tier-select {
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--muted);
+            font-family: Georgia, serif;
+            font-size: 0.72rem;
+            padding: 3px 6px;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.15s;
+        }
+
+        .tier-select:hover, .tier-select:focus {
+            border-color: var(--red);
+            color: var(--text);
+        }
+
+        .tier-select option {
+            background: #1a1d24;
+            color: var(--text);
+        }
+
+        .send-btn {
+            background: var(--red);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 16px;
+            font-family: Georgia, serif;
+            font-size: 0.82rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.15s;
+            white-space: nowrap;
+        }
+
+        .send-btn:hover { background: var(--red-dark); }
+        .send-btn:disabled { background: var(--faint); cursor: not-allowed; }
+
+        /* Bottom row — new conversation link */
+        .input-bottom {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+
+        .new-convo-btn {
+            background: transparent;
+            border: none;
+            color: var(--faint);
+            font-family: Georgia, serif;
+            font-size: 0.75rem;
+            cursor: pointer;
+            letter-spacing: 1px;
+            padding: 4px 8px;
+            transition: color 0.15s;
+        }
+
+        .new-convo-btn:hover { color: var(--muted); }
+
+        /* ── FOOTER ──────────────────────────────────────────────── */
+        .footer {
+            text-align: center;
+            padding: 6px 20px 10px;
+            color: var(--faint);
+            font-size: 0.7rem;
+            flex-shrink: 0;
+            line-height: 1.6;
+        }
+
+        /* ── SCROLLBAR ───────────────────────────────────────────── */
+        .chat-area::-webkit-scrollbar { width: 4px; }
+        .chat-area::-webkit-scrollbar-track { background: transparent; }
+        .chat-area::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+    </style>
+</head>
+<body>
+
+    <!-- Header — always visible -->
+    <div class="header">
+        <h1>SANCTUARY</h1>
+        <p>Wise counsel. Available at 2am. Grounded in Scripture.</p>
+    </div>
+
+    <!-- Chat area — empty state is centered, active state scrolls -->
+    <div class="chat-area empty" id="chatArea">
+        <div class="welcome" id="welcomeState">
+            <p class="welcome-title">What's on your heart, pastor?</p>
+            <div class="welcome-suggestions">
+                <button class="suggestion" onclick="useSuggestion(this)">
+                    "I'm facing conflict with a deacon in my church..."
+                </button>
+                <button class="suggestion" onclick="useSuggestion(this)">
+                    "What does Scripture say about church discipline?"
+                </button>
+                <button class="suggestion" onclick="useSuggestion(this)">
+                    "I'm struggling with burnout in ministry..."
+                </button>
+                <button class="suggestion" onclick="useSuggestion(this)">
+                    "How do I handle a member spreading rumors?"
+                </button>
+            </div>
+        </div>
+        <!-- Messages are injected here by JS -->
+        <div class="messages" id="messages" style="display:none;"></div>
+    </div>
+
+    <!-- Typing indicator — outside chat area, always at bottom -->
+    <div class="typing" id="typingIndicator">
+        <div class="typing-label">Sanctuary</div>
+        <div class="typing-bubble">Seeking counsel from Scripture...</div>
+    </div>
+
+    <!-- Verse rotation — fixed height, never shifts layout -->
+    <div class="verse-display" id="verseDisplay"></div>
+
+    <!-- Input area -->
+    <div class="input-area">
+        <div class="input-wrapper">
+            <div class="input-row">
+                <textarea
+                    id="messageInput"
+                    placeholder="Bring it as it is..."
+                    rows="1"
+                    onkeydown="handleKeyDown(event)"
+                    oninput="autoResize(this)"
+                ></textarea>
+                <div class="input-controls">
+                    <!-- Tier selector inside the input box -->
+                    <select class="tier-select" id="tierSelect">
+                        <option value="shepherd">Shepherd · $29/mo</option>
+                        <option value="pastor" selected>Pastor · $47/mo</option>
+                        <option value="elder">Elder · $99/mo</option>
+                    </select>
+                    <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+                        Seek Counsel
+                    </button>
+                </div>
+            </div>
+            <div class="input-bottom">
+                <button class="new-convo-btn" onclick="newConversation()">
+                    + New Conversation
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>All counsel is grounded in Scripture and reviewed for theological integrity.</p>
+        <p>Bible is the ultimate authority. This tool assists — it does not replace — pastoral wisdom.</p>
+    </div>
+
+    <script>
+        // ── STATE ─────────────────────────────────────────────────
+        let currentSessionId = null;
+        let isProcessing     = false;
+        let verseInterval    = null;
+        let hasMessages      = false;
+
+        // ── VERSES ────────────────────────────────────────────────
+        const verses = [
+            { text: "Be still, and know that I am God.", ref: "Psalm 46:10" },
+            { text: "Trust in the Lord with all your heart.", ref: "Proverbs 3:5" },
+            { text: "If any of you lacks wisdom, ask God.", ref: "James 1:5" },
+            { text: "Cast all your anxiety on him because he cares for you.", ref: "1 Peter 5:7" },
+            { text: "The Lord is my shepherd, I lack nothing.", ref: "Psalm 23:1" },
+            { text: "Come to me, all you who are weary and burdened.", ref: "Matthew 11:28" },
+            { text: "For I know the plans I have for you.", ref: "Jeremiah 29:11" },
+            { text: "Do not be anxious about anything.", ref: "Philippians 4:6" }
+        ];
+
+        // ── SUGGESTION CLICK ──────────────────────────────────────
+        function useSuggestion(btn) {
+            const text = btn.textContent.replace(/['"]/g, '').trim();
+            document.getElementById('messageInput').value = text;
+            autoResize(document.getElementById('messageInput'));
+            document.getElementById('messageInput').focus();
+        }
+
+        // ── AUTO-RESIZE TEXTAREA ──────────────────────────────────
+        function autoResize(el) {
+            el.style.height = 'auto';
+            el.style.height = Math.min(el.scrollHeight, 140) + 'px';
+        }
+
+        // ── ENTER TO SEND ─────────────────────────────────────────
+        function handleKeyDown(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        }
+
+        // ── TRANSITION FROM EMPTY TO CHAT STATE ───────────────────
+        // Removes centered welcome layout, shows message thread
+        function activateChatMode() {
+            if (hasMessages) return;
+            hasMessages = true;
+
+            const chatArea    = document.getElementById('chatArea');
+            const welcomeState = document.getElementById('welcomeState');
+            const messages    = document.getElementById('messages');
+
+            chatArea.classList.remove('empty');
+            welcomeState.style.display = 'none';
+            messages.style.display = 'flex';
+        }
+
+        // ── VERSE ROTATION ────────────────────────────────────────
+        function startVerseRotation() {
+            const display = document.getElementById('verseDisplay');
+            display.style.display = 'block';
+            let index = Math.floor(Math.random() * verses.length);
+
+            function showVerse() {
+                const v = verses[index];
+                display.innerHTML = `"${v.text}" <span style="color:var(--red);">— ${v.ref}</span>`;
+                index = (index + 1) % verses.length;
+            }
+
+            showVerse();
+            verseInterval = setInterval(showVerse, 4000);
+        }
+
+        function stopVerseRotation() {
+            clearInterval(verseInterval);
+            document.getElementById('verseDisplay').style.display = 'none';
+        }
+
+        // ── ADD MESSAGE ───────────────────────────────────────────
+        function addMessage(role, content, meta) {
+            activateChatMode();
+
+            const container = document.getElementById('messages');
+            const div       = document.createElement('div');
+            div.className   = `message ${role}`;
+
+            const label       = document.createElement('div');
+            label.className   = 'message-label';
+            label.textContent = role === 'pastor' ? 'You' : 'Sanctuary';
+
+            const bubble     = document.createElement('div');
+            bubble.className = 'message-bubble';
+            bubble.innerHTML = formatResponse(content);
+
+            div.appendChild(label);
+            div.appendChild(bubble);
+
+            if (meta) {
+                const metaDiv       = document.createElement('div');
+                metaDiv.className   = 'message-meta';
+                metaDiv.textContent = meta;
+                div.appendChild(metaDiv);
+            }
+
+            container.appendChild(div);
+            div.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
+
+        // ── FORMAT RESPONSE ───────────────────────────────────────
+        function formatResponse(text) {
+            return text
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/^### (.*?)$/gm, '<br><strong style="font-size:0.85rem;color:#aaa;text-transform:uppercase;letter-spacing:1px;">$1</strong><br>')
+                .replace(/^## (.*?)$/gm, '<br><strong style="font-size:0.95rem;color:#ccc;">$1</strong><br>')
+                .replace(/^# (.*?)$/gm, '<br><strong style="font-size:1.05rem;color:var(--red);letter-spacing:1px;">$1</strong><br>')
+                .replace(/^---$/gm, '<hr style="border-color:var(--border);margin:10px 0;">')
+                .replace(/\n/g, '<br>');
+        }
+
+        // ── SEND MESSAGE ──────────────────────────────────────────
+        async function sendMessage() {
+            if (isProcessing) return;
+
+            const input   = document.getElementById('messageInput');
+            const sendBtn = document.getElementById('sendBtn');
+            const typing  = document.getElementById('typingIndicator');
+            const tier    = document.getElementById('tierSelect').value;
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            addMessage('pastor', message);
+
+            input.value = '';
+            input.style.height = 'auto';
+
+            isProcessing        = true;
+            sendBtn.disabled    = true;
+            sendBtn.textContent = 'Seeking...';
+            typing.style.display = 'flex';
+            startVerseRotation();
+
+            // Scroll typing indicator into view
+            typing.scrollIntoView({ behavior: 'smooth', block: 'end' });
+
+            const startTime = Date.now();
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/analyze', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        problem:    message,
+                        tier:       tier,
+                        agent:      'sanctuary',
+                        session_id: currentSessionId
+                    })
+                });
+
+                const data    = await response.json();
+                const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+
+                if (data.session_id) currentSessionId = data.session_id;
+
+                const tierLabels   = { shepherd: 'Shepherd', pastor: 'Pastor', elder: 'Elder' };
+                const reviewStatus = (data.arch_verdict && data.arch_verdict.includes('APPROVED'))
+                    ? '✅ Theologically reviewed'
+                    : '⚠️ Review flagged concerns';
+                const turnCount = data.turn_count ? `· Turn ${data.turn_count} ` : '';
+                const meta = `${tierLabels[tier] || tier} ${turnCount}· ${reviewStatus} · ${elapsed}s`;
+
+                typing.style.display = 'none';
+                addMessage('sanctuary', data.response || 'No response received.', meta);
+
+            } catch (err) {
+                typing.style.display = 'none';
+                addMessage('sanctuary', 'Unable to reach Sanctuary. Please ensure the API is running at http://127.0.0.1:5000');
+            }
+
+            stopVerseRotation();
+            isProcessing        = false;
+            sendBtn.disabled    = false;
+            sendBtn.textContent = 'Seek Counsel';
+            input.focus();
+        }
+
+        // ── NEW CONVERSATION ──────────────────────────────────────
+        function newConversation() {
+            if (isProcessing) return;
+
+            // Reset to welcome/centered state
+            hasMessages    = false;
+            currentSessionId = null;
+
+            const chatArea     = document.getElementById('chatArea');
+            const welcomeState = document.getElementById('welcomeState');
+            const messages     = document.getElementById('messages');
+
+            messages.innerHTML = '';
+            messages.style.display = 'none';
+            welcomeState.style.display = 'block';
+            chatArea.classList.add('empty');
+
+            document.getElementById('messageInput').focus();
+        }
+
+        // ── INIT ──────────────────────────────────────────────────
+        window.onload = () => document.getElementById('messageInput').focus();
+    </script>
+</body>
+</html>
