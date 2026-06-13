@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deacon Who Kept Showing Up — TNVOLMAN</title>
+  <meta name="description" content="A reflection on the faithful love of a West Park Baptist deacon that changed the trajectory of my life — and why I'm building for the Church now.">
+  <meta property="og:title" content="The Deacon Who Kept Showing Up">
+  <meta property="og:description" content="Some Sundays I hid and didn't go. But he kept showing up.">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF8200;
+      --gray: #4B4B4B;
+      --white: #FFFFFF;
+      --bg: #111111;
+      --bg-card: #1a1a1a;
+      --border: rgba(255,130,0,0.14);
+      --text-muted: #777777;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg);
+      color: var(--white);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+      color: var(--orange);
+      text-decoration: none;
+    }
+
+    .nav-back {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--orange); }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px 40px;
+    }
+
+    .category-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      border: 1px solid var(--orange);
+      padding: 4px 10px;
+      border-radius: 3px;
+      margin-bottom: 24px;
+    }
+
+    .post-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      letter-spacing: 2px;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .post-subtitle {
+      font-family: 'Merriweather', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .post-meta .dot { color: var(--border); }
+
+    .post-meta .read-time { color: var(--orange); }
+
+    /* ── CONTENT ── */
+    .post-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .post-content p {
+      font-family: 'Merriweather', serif;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 28px;
+    }
+
+    .post-content p:first-child::first-letter {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4.2rem;
+      float: left;
+      line-height: 0.85;
+      margin: 4px 12px 0 0;
+      color: var(--orange);
+    }
+
+    .post-content .pullquote {
+      border-left: 3px solid var(--orange);
+      padding: 4px 0 4px 24px;
+      margin: 40px 0;
+    }
+
+    .post-content .pullquote p {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: 0;
+    }
+
+    .post-content .closing {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-style: normal;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      margin-top: 48px;
+    }
+
+    .post-content .closing strong {
+      color: var(--orange);
+      font-weight: 600;
+    }
+
+    /* ── AUTHOR CARD ── */
+    .author-card {
+      max-width: 720px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+
+    .author-inner {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .author-label {
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    .author-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+
+    .author-bio {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── BACK LINK ── */
+    .back-section {
+      max-width: 720px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      text-decoration: none;
+      border: 1px solid var(--orange);
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .back-btn:hover {
+      background: var(--orange);
+      color: #000;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      .hero { padding: 40px 16px 32px; }
+      .post-content { padding: 36px 16px 60px; }
+      .author-card, .back-section { padding: 0 16px; }
+      .post-content p:first-child::first-letter { font-size: 3.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="https://blog.tnvolman.com">TNVOLMAN</a>
+    <a class="nav-back" href="https://blog.tnvolman.com">← Back to Blog</a>
+  </nav>
+
+  <article>
+
+    <div class="hero">
+      <span class="category-tag">Faith &amp; Testimony</span>
+      <h1 class="post-title">The Deacon Who Kept Showing Up</h1>
+      <p class="post-subtitle">"Some Sundays I hid and didn't go. But he kept showing up." A reflection on the faithful love of a West Park Baptist deacon that changed the trajectory of my life — and why I'm building for the Church now.</p>
+      <div class="post-meta">
+        <span>Michael McClanahan</span>
+        <span class="dot">·</span>
+        <span>June 12, 2026</span>
+        <span class="dot">·</span>
+        <span class="read-time">3 min read</span>
+      </div>
+    </div>
+
+    <div class="post-content">
+
+      <p>As far back as I can remember, my parents never went to church. Our home had a lot of strife and inconsistency, but God protected my heart through it all.</p>
+
+      <p>The first time I ever went to church was at Vacation Bible School when I was five years old. A few years later, my cousin Faith invited me to West Park Baptist Church. That invitation changed everything.</p>
+
+      <p>A deacon named Phil Raby led the bus ministry there. Every Saturday he would come by my house bringing gum or candy, just to check on me. On Sunday mornings the bus would roll up and honk the horn. Some weeks I'd get on. Other weeks I'd hide under the covers out of shyness. But no matter what, Phil kept showing up.</p>
+
+      <div class="pullquote">
+        <p>"Some Sundays I hid and didn't go. But he kept showing up."</p>
+      </div>
+
+      <p>When my parents divorced, I was in sixth grade. We moved further away and I stopped going to West Park. For two years I begged my mom to let me live with my Uncle Charles and Aunt Judy, who lived just down the road from the church.</p>
+
+      <p>In eighth grade, my mom made the hardest decision a mother can make — she let me go. That same day I switched schools and moved in with my aunt and uncle. I was back at West Park and fully involved.</p>
+
+      <p>At thirteen years old, I realized I had never truly been saved. I trusted Christ as my Savior, got baptized, and by God's grace I've never doubted my salvation since.</p>
+
+      <p>Because of that big yellow church bus and a deacon who wouldn't quit, I came to know the Lord. I stayed in church through high school, went to Bob Jones, got married, and now 28 years later I'm still here with my beautiful wife Tonia and four godly kids — three boys and a girl. My two oldest boys are both married to wonderful Christian women, which means we have six kids now. 😊</p>
+
+      <p>I owe it all to a man who sacrificed his Saturdays with his own kids just to reach kids like me who didn't have that Christian love at home. He gave up that time to pour into other children who needed Jesus.</p>
+
+      <p>Thank you, Phil. I'll forever be grateful for your love and sacrifice. That big yellow church bus and one faithful deacon changed the entire trajectory of my life.</p>
+
+      <div class="pullquote">
+        <p>"The tools look different. The mission is the same. Be faithful. Keep coming back. And trust God with the rest."</p>
+      </div>
+
+      <p>And now, all these years later, I find myself asking God to use me the same way — to show up consistently for people who need someone in their corner. The tools look different. The mission is the same. Be faithful. Keep coming back. And trust God with the rest.</p>
+
+      <div class="closing">
+        <p>Michael McClanahan is the founder of <strong>The Forge</strong> — a Kingdom-first AI company building faithful tools for the Church. He lives in Wilson, NC with his wife Tonia.</p>
+      </div>
+
+    </div>
+
+  </article>
+
+  <div class="author-card">
+    <div class="author-inner">
+      <span class="author-label">About the Author</span>
+      <span class="author-name">Michael McClanahan</span>
+      <p class="author-bio">Husband to Tonia. Dad to six. 28 years in supply chain. Founder of The Forge — building AI agents for the Church. Wilson, NC. Romans 5:8.</p>
+    </div>
+  </div>
+
+  <div class="back-section">
+    <a class="back-btn" href="https://blog.tnvolman.com">← All Posts</a>
+  </div>
+
+</body>
+</html>
