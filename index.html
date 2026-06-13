@@ -428,6 +428,13 @@
     }
 
     .card-date { font-size: 11.5px; color: var(--text-muted); }
+    .card-coming-soon {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,130,0,0.45);
+    }
 
     .card-read-more {
       font-size: 12px;
@@ -487,7 +494,6 @@
 
     .widget-body { padding: 20px 18px; }
 
-    /* About widget */
     .about-name {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 36px;
@@ -548,7 +554,6 @@
     }
     .link-icon { font-size: 13px; opacity: 0.75; }
 
-    /* Scripture widget */
     .scripture-widget {
       background: linear-gradient(140deg, #150700 0%, #0f0f0f 100%);
       border: 1px solid rgba(255,130,0,0.18);
@@ -571,7 +576,6 @@
       color: var(--orange);
     }
 
-    /* Recent posts widget */
     .recent-item {
       display: flex;
       gap: 12px;
@@ -599,8 +603,8 @@
     .recent-title a { color: inherit; }
     .recent-title a:hover { color: var(--orange); text-decoration: none; }
     .recent-date { font-size: 11px; color: var(--text-muted); }
+    .recent-soon { font-size: 10px; color: rgba(255,130,0,0.4); letter-spacing: 1px; text-transform: uppercase; }
 
-    /* Categories widget */
     .cat-list { list-style: none; }
     .cat-list li {
       display: flex;
@@ -703,10 +707,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
-      .main-wrap {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
+      .main-wrap { grid-template-columns: 1fr; gap: 40px; }
       .sidebar { position: static; }
       .featured { grid-template-columns: 1fr; }
       .featured-art { min-height: 140px; }
@@ -739,7 +740,6 @@
 </head>
 <body>
 
-  <!-- ── NAVBAR ── -->
   <nav class="navbar">
     <a href="#" class="nav-brand">TNVOLMAN</a>
     <ul class="nav-links" id="navLinks">
@@ -754,7 +754,6 @@
     </div>
   </nav>
 
-  <!-- ── HERO ── -->
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-gradient"></div>
@@ -773,13 +772,10 @@
     </div>
   </section>
 
-  <!-- ── MAIN ── -->
   <main class="main-wrap" id="posts">
 
-    <!-- CONTENT COLUMN -->
     <div>
 
-      <!-- FEATURED -->
       <div class="section-header">
         <h2>FEATURED</h2>
         <div class="section-line"></div>
@@ -795,18 +791,17 @@
             <h2 class="featured-title">The Deacon Who Kept Showing Up</h2>
             <p class="post-excerpt">"Some Sundays I hid and didn't go. But he kept showing up." A reflection on the faithful love of a West Park Baptist deacon that changed the trajectory of my life — and why I'm building for the Church now.</p>
             <div class="post-meta">
-              <span>May 28, 2026</span>
+              <span>June 12, 2026</span>
               <span class="meta-sep">·</span>
-              <span>6 min read</span>
+              <span>3 min read</span>
               <span class="meta-sep">·</span>
               <span class="meta-cat">Faith &amp; Testimony</span>
             </div>
           </div>
-          <a href="#" class="btn-read">Read the Story</a>
+          <a href="/the-deacon-who-kept-showing-up" class="btn-read">Read the Story</a>
         </div>
       </article>
 
-      <!-- POST GRID -->
       <div class="section-header">
         <h2>LATEST WRITING</h2>
         <div class="section-line"></div>
@@ -819,8 +814,7 @@
           <h3 class="card-title">What God Showed Me at Mar-a-Lago</h3>
           <p class="card-excerpt">On April 25, 2026, something shifted. God put a vision on my heart that I haven't been able to shake — technology genuinely grounded in Scripture, not just referencing it.</p>
           <div class="card-footer">
-            <span class="card-date">May 25, 2026 &nbsp;·&nbsp; 8 min</span>
-            <a href="#" class="card-read-more">Read →</a>
+            <span class="card-coming-soon">In the Works</span>
           </div>
         </article>
 
@@ -829,8 +823,7 @@
           <h3 class="card-title">The 2 AM Pastor Problem</h3>
           <p class="card-excerpt">Every pastor carries weight most will never see. What does it look like to build technology that actually shows up at 2am when a shepherd has no one to call?</p>
           <div class="card-footer">
-            <span class="card-date">May 22, 2026 &nbsp;·&nbsp; 5 min</span>
-            <a href="#" class="card-read-more">Read →</a>
+            <span class="card-coming-soon">In the Works</span>
           </div>
         </article>
 
@@ -839,8 +832,7 @@
           <h3 class="card-title">From Detour to Destiny: Every Season Had a Purpose</h3>
           <p class="card-excerpt">Looking back, every skill I learned, every industry I touched, every "wrong turn" — all of it was preparation. I just didn't know what I was being prepared for yet.</p>
           <div class="card-footer">
-            <span class="card-date">May 18, 2026 &nbsp;·&nbsp; 7 min</span>
-            <a href="#" class="card-read-more">Read →</a>
+            <span class="card-coming-soon">In the Works</span>
           </div>
         </article>
 
@@ -849,8 +841,7 @@
           <h3 class="card-title">Why I'm TNVOLMAN: On Identity, Roots, and Orange</h3>
           <p class="card-excerpt">Tennessee orange isn't just a color. It's a declaration. A reminder of where I came from, what shaped me, and the God who met me in a trailer court in Knoxville.</p>
           <div class="card-footer">
-            <span class="card-date">May 15, 2026 &nbsp;·&nbsp; 4 min</span>
-            <a href="#" class="card-read-more">Read →</a>
+            <span class="card-coming-soon">In the Works</span>
           </div>
         </article>
 
@@ -859,8 +850,7 @@
           <h3 class="card-title">Not a Chatbot With a Bible Verse</h3>
           <p class="card-excerpt">There's a difference between technology that references Scripture and technology genuinely grounded in it. I'm building the latter — and here's what that actually means in practice.</p>
           <div class="card-footer">
-            <span class="card-date">May 10, 2026 &nbsp;·&nbsp; 6 min</span>
-            <a href="#" class="card-read-more">Read →</a>
+            <span class="card-coming-soon">In the Works</span>
           </div>
         </article>
 
@@ -869,8 +859,7 @@
           <h3 class="card-title">Romans 5:8 — The Verse That Holds Everything Together</h3>
           <p class="card-excerpt">I didn't deserve to be found. The trajectory of my life should have gone a different direction. But while I was still hiding on Sunday mornings, love kept showing up anyway.</p>
           <div class="card-footer">
-            <span class="card-date">May 5, 2026 &nbsp;·&nbsp; 5 min</span>
-            <a href="#" class="card-read-more">Read →</a>
+            <span class="card-coming-soon">In the Works</span>
           </div>
         </article>
 
@@ -882,10 +871,8 @@
 
     </div>
 
-    <!-- ── SIDEBAR ── -->
     <aside class="sidebar">
 
-      <!-- About -->
       <div class="widget">
         <div class="widget-head">About TNVOLMAN</div>
         <div class="widget-body">
@@ -915,55 +902,52 @@
         </div>
       </div>
 
-      <!-- Scripture -->
       <div class="scripture-widget">
         <p class="scripture-text">"But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us."</p>
         <div class="scripture-ref">Romans 5:8 &nbsp;·&nbsp; KJV</div>
       </div>
 
-      <!-- Recent Posts -->
       <div class="widget">
         <div class="widget-head">Recent Posts</div>
         <div class="widget-body">
           <div class="recent-item">
             <div class="recent-num">01</div>
             <div>
-              <div class="recent-title"><a href="#">The Deacon Who Kept Showing Up</a></div>
-              <div class="recent-date">May 28, 2026 &nbsp;·&nbsp; 6 min</div>
+              <div class="recent-title"><a href="/the-deacon-who-kept-showing-up">The Deacon Who Kept Showing Up</a></div>
+              <div class="recent-date">June 12, 2026 &nbsp;·&nbsp; 3 min</div>
             </div>
           </div>
           <div class="recent-item">
             <div class="recent-num">02</div>
             <div>
-              <div class="recent-title"><a href="#">What God Showed Me at Mar-a-Lago</a></div>
-              <div class="recent-date">May 25, 2026 &nbsp;·&nbsp; 8 min</div>
+              <div class="recent-title">What God Showed Me at Mar-a-Lago</div>
+              <div class="recent-soon">In the Works</div>
             </div>
           </div>
           <div class="recent-item">
             <div class="recent-num">03</div>
             <div>
-              <div class="recent-title"><a href="#">The 2 AM Pastor Problem</a></div>
-              <div class="recent-date">May 22, 2026 &nbsp;·&nbsp; 5 min</div>
+              <div class="recent-title">The 2 AM Pastor Problem</div>
+              <div class="recent-soon">In the Works</div>
             </div>
           </div>
           <div class="recent-item">
             <div class="recent-num">04</div>
             <div>
-              <div class="recent-title"><a href="#">From Detour to Destiny</a></div>
-              <div class="recent-date">May 18, 2026 &nbsp;·&nbsp; 7 min</div>
+              <div class="recent-title">From Detour to Destiny</div>
+              <div class="recent-soon">In the Works</div>
             </div>
           </div>
           <div class="recent-item">
             <div class="recent-num">05</div>
             <div>
-              <div class="recent-title"><a href="#">Why I'm TNVOLMAN</a></div>
-              <div class="recent-date">May 15, 2026 &nbsp;·&nbsp; 4 min</div>
+              <div class="recent-title">Why I'm TNVOLMAN</div>
+              <div class="recent-soon">In the Works</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Categories -->
       <div class="widget">
         <div class="widget-head">Categories</div>
         <div class="widget-body">
@@ -995,7 +979,6 @@
     </aside>
   </main>
 
-  <!-- ── FOOTER ── -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-top">
