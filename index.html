@@ -1035,5 +1035,17 @@
     });
   </script>
 
+
+  <script>
+    // Blog view tracking — fires silently on page load
+    (function() {
+      var page = window.location.pathname || '/';
+      fetch('https://mcclanahan.tnvolman.com/api/track?page=' + encodeURIComponent(page), {
+        method: 'GET',
+        mode: 'no-cors'
+      }).catch(function() {});
+    })();
+  </script>
+
 </body>
 </html>
