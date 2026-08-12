@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing — TNVOLMAN</title>
+  <meta name="description" content="Published writing from Michael McClanahan — testimony, calling, and the story as it's been given so far.">
+  <meta property="og:title" content="Writing — TNVOLMAN">
+  <meta property="og:description" content="Published writing from Michael McClanahan — testimony, calling, and the story as it's been given so far.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blog.tnvolman.com/writing">
+  <meta property="og:image" content="https://blog.tnvolman.com/blog_social_media_share_image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.tnvolman.com/blog_social_media_share_image.jpg">
+  <meta name="twitter:title" content="Writing — TNVOLMAN">
+  <meta name="twitter:description" content="Published writing from Michael McClanahan — testimony, calling, and the story as it's been given so far.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF8200;
+      --gray: #4B4B4B;
+      --white: #FFFFFF;
+      --bg: #111111;
+      --bg-card: #1a1a1a;
+      --bg-card-hover: #202020;
+      --border: rgba(255,130,0,0.14);
+      --text-muted: #777777;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--orange); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(17,17,17,0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+    }
+
+    .nav-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px;
+      letter-spacing: 5px;
+      color: var(--orange);
+      text-shadow: 0 0 24px rgba(255,130,0,0.35);
+    }
+    .nav-brand:hover { text-decoration: none; opacity: 0.85; }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.4px;
+      color: rgba(255,255,255,0.72);
+      transition: color 0.18s;
+    }
+    .nav-links a:hover { color: var(--orange); text-decoration: none; }
+    .nav-links a.current { color: var(--orange); }
+
+    .nav-cta {
+      background: var(--orange) !important;
+      color: var(--white) !important;
+      padding: 7px 18px;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      transition: background 0.18s, transform 0.18s !important;
+    }
+    .nav-cta:hover { background: #e67300 !important; transform: translateY(-1px); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      width: 22px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.25s;
+      display: block;
+    }
+
+    .archive-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .section-header h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.9);
+      white-space: nowrap;
+    }
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, rgba(255,130,0,0.3), transparent);
+    }
+
+    .archive-intro {
+      font-family: 'Merriweather', serif;
+      font-size: 15px;
+      font-style: italic;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+
+    .post-list {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .post-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 26px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.22s, background 0.22s, transform 0.22s;
+    }
+    .post-card:hover {
+      border-color: rgba(255,130,0,0.38);
+      background: var(--bg-card-hover);
+      transform: translateY(-3px);
+    }
+
+    .card-cat {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 11px;
+    }
+
+    .card-title {
+      font-family: 'Merriweather', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.45;
+      margin-bottom: 11px;
+    }
+    .card-title a { color: inherit; }
+    .card-title a:hover { color: var(--orange); text-decoration: none; }
+
+    .card-excerpt {
+      font-family: 'Merriweather', serif;
+      font-size: 14px;
+      font-style: italic;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255,130,0,0.09);
+      padding-top: 14px;
+      margin-top: auto;
+    }
+
+    .card-date { font-size: 11.5px; color: var(--text-muted); }
+    .card-read-more {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--orange);
+    }
+    .card-read-more:hover { text-decoration: underline; }
+
+    .archive-note {
+      margin-top: 36px;
+      font-family: 'Merriweather', serif;
+      font-size: 13.5px;
+      font-style: italic;
+      color: rgba(255,255,255,0.38);
+    }
+
+    .site-footer {
+      background: #0a0a0a;
+      border-top: 1px solid var(--border);
+      padding: 56px 24px 36px;
+      margin-top: 24px;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 32px;
+    }
+    .footer-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 52px;
+      letter-spacing: 7px;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .footer-tagline {
+      font-family: 'Merriweather', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.85;
+      max-width: 340px;
+    }
+    .footer-col-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: var(--gray);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gray);
+    }
+    .footer-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-list a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.18s;
+    }
+    .footer-list a:hover { color: var(--orange); text-decoration: none; }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.28); }
+    .footer-copy strong { color: var(--orange); }
+    .footer-identity {
+      font-size: 12px;
+      color: rgba(255,255,255,0.28);
+      letter-spacing: 0.3px;
+    }
+    .footer-identity span { color: rgba(255,130,0,0.3); margin: 0 7px; }
+
+    @media (max-width: 960px) {
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .footer-brand-col { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 640px) {
+      .navbar { padding: 0 16px; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 60px; left: 0; right: 0;
+        background: rgba(14,14,14,0.98);
+        padding: 20px 24px;
+        border-bottom: 1px solid var(--border);
+        gap: 16px;
+        z-index: 199;
+      }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      .archive-wrap { padding: 100px 16px 60px; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="/" class="nav-brand">TNVOLMAN</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/writing" class="current">Writing</a></li>
+      <li><a href="https://forge.tnvolman.com" target="_blank">The Forge</a></li>
+      <li><a href="https://sanctuary.tnvolman.com" target="_blank">Sanctuary</a></li>
+      <li><a href="https://x.com/TNVOLMAN" target="_blank">@TNVOLMAN</a></li>
+      <li><a href="https://github.com/tnvolman" target="_blank" class="nav-cta">GitHub</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <main class="archive-wrap">
+    <div class="section-header">
+      <h1>WRITING</h1>
+      <div class="section-line"></div>
+    </div>
+    <p class="archive-intro">The published pieces. Testimony first — the story as it's been given so far.</p>
+
+    <div class="post-list">
+
+      <article class="post-card">
+        <div class="card-cat">Faith &amp; Testimony</div>
+        <h2 class="card-title"><a href="/romans-5-8-the-verse-that-holds-everything-together">Romans 5:8 — The Verse That Holds Everything Together</a></h2>
+        <p class="card-excerpt">I didn't deserve to be found. The trajectory of my life should have gone a different direction. But while I was still hiding on Sunday mornings, love kept showing up anyway.</p>
+        <div class="card-footer">
+          <span class="card-date">August 12, 2026</span>
+          <a href="/romans-5-8-the-verse-that-holds-everything-together" class="card-read-more">Read →</a>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="card-cat">Faith &amp; Testimony</div>
+        <h2 class="card-title"><a href="/the-deacon-who-kept-showing-up">The Deacon Who Kept Showing Up</a></h2>
+        <p class="card-excerpt">"Some Sundays I hid and didn't go. But he kept showing up." A reflection on the faithful love of a West Park Baptist deacon that changed the trajectory of my life — and why I'm building for the Church now.</p>
+        <div class="card-footer">
+          <span class="card-date">June 12, 2026</span>
+          <a href="/the-deacon-who-kept-showing-up" class="card-read-more">Read →</a>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="archive-note">More of the story is being written.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <div class="footer-brand">TNVOLMAN</div>
+          <p class="footer-tagline">"I grew up in a non-Christian home in a trailer court in Knoxville, Tennessee. A deacon kept showing up every Saturday — bringing candy, bringing love, bringing Jesus. It changed the trajectory of my life forever."</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Navigate</div>
+          <ul class="footer-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/writing">Writing</a></li>
+            <li><a href="https://forge.tnvolman.com" target="_blank">The Forge</a></li>
+            <li><a href="https://sanctuary.tnvolman.com" target="_blank">Sanctuary</a></li>
+            <li><a href="https://github.com/tnvolman" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Connect</div>
+          <ul class="footer-list">
+            <li><a href="https://x.com/TNVOLMAN" target="_blank">@TNVOLMAN on X</a></li>
+            <li><a href="https://www.instagram.com/tnv0lman" target="_blank">Instagram</a></li>
+            <li><a href="https://www.facebook.com/mcclanahans" target="_blank">Facebook</a></li>
+            <li><a href="https://www.linkedin.com/in/michael-mcclanahan-49229091/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://forge.tnvolman.com" target="_blank">The Forge App</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy" style="margin-bottom:14px;line-height:1.7;max-width:760px">This is the personal blog of Michael McClanahan (TNVOLMAN). All content reflects my own faith, story, and views. It is not affiliated with, endorsed by, or representing any political figure, organization, government entity, company, or financial service. Nothing here is financial advice or a solicitation of any kind.</div>
+        <div class="footer-copy">&copy; 2026 <strong>TNVOLMAN</strong> — Michael McClanahan</div>
+        <div class="footer-identity">
+          Believer<span>·</span>Father<span>·</span>Founder<span>·</span>Developer<span>·</span>Builder
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+
+  <script>
+    (function() {
+      var page = window.location.pathname || '/';
+      fetch('https://mcclanahan.tnvolman.com/api/track?page=' + encodeURIComponent(page), {
+        method: 'GET',
+        mode: 'no-cors'
+      }).catch(function() {});
+    })();
+  </script>
+
+</body>
+</html>
