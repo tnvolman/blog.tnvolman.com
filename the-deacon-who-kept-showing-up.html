@@ -9,9 +9,11 @@
   <meta property="og:description" content="Some Sundays I hid and didn't go. But he kept showing up.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://blog.tnvolman.com/the-deacon-who-kept-showing-up">
-  <meta property="og:image" content="https://blog.tnvolman.com/blog_social_media_share_image.jpg">
+  <meta property="og:image" content="https://blog.tnvolman.com/the-deacon-who-kept-showing-up-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://blog.tnvolman.com/blog_social_media_share_image.jpg">
+  <meta name="twitter:image" content="https://blog.tnvolman.com/the-deacon-who-kept-showing-up-og.jpg">
   <meta name="twitter:title" content="The Deacon Who Kept Showing Up">
   <meta name="twitter:description" content="Some Sundays I hid and didn't go. But he kept showing up.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -124,6 +126,30 @@
     .post-meta .dot { color: var(--border); }
 
     .post-meta .read-time { color: var(--orange); }
+
+    /* ── HERO PHOTO ── */
+    .post-photo {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 36px 24px 0;
+    }
+
+    .post-photo img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      object-position: left 62%;
+      border-radius: 8px;
+      display: block;
+      border: 1px solid var(--border);
+    }
+
+    .post-photo figcaption {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+      letter-spacing: 0.2px;
+    }
 
     /* ── CONTENT ── */
     .post-content {
@@ -247,6 +273,8 @@
     /* ── MOBILE ── */
     @media (max-width: 600px) {
       .hero { padding: 40px 16px 32px; }
+      .post-photo { padding: 28px 16px 0; }
+      .post-photo img { height: 320px; }
       .post-content { padding: 36px 16px 60px; }
       .author-card, .back-section { padding: 0 16px; }
       .post-content p:first-child::first-letter { font-size: 3.2rem; }
@@ -274,6 +302,11 @@
         <span class="read-time">3 min read</span>
       </div>
     </div>
+
+    <figure class="post-photo">
+      <img src="/the-deacon-who-kept-showing-up.jpg" alt="Country Estates trailer park — the tail of a yellow school bus leaving on an overcast autumn day">
+      <figcaption>Knoxville · the bus that kept coming back</figcaption>
+    </figure>
 
     <div class="post-content">
 
