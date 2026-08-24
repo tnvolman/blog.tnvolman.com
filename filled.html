@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filled — TNVOLMAN</title>
+  <meta name="description" content="Being filled isn't an achievement. You are always filled with something. The question is never are you full? The question is always full of what?">
+  <meta property="og:title" content="Filled">
+  <meta property="og:description" content="Being filled isn't an achievement. You are always filled with something. The question is never are you full? The question is always full of what?">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://blog.tnvolman.com/filled">
+  <meta property="og:image" content="https://blog.tnvolman.com/filled-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.tnvolman.com/filled-og.jpg">
+  <meta name="twitter:title" content="Filled">
+  <meta name="twitter:description" content="Being filled isn't an achievement. You are always filled with something. The question is never are you full? The question is always full of what?">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF8200;
+      --gray: #4B4B4B;
+      --white: #FFFFFF;
+      --bg: #111111;
+      --bg-card: #1a1a1a;
+      --border: rgba(255,130,0,0.14);
+      --text-muted: #777777;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg);
+      color: var(--white);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+      color: var(--orange);
+      text-decoration: none;
+    }
+
+    .nav-back {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--orange); }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px 40px;
+    }
+
+    .category-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      border: 1px solid var(--orange);
+      padding: 4px 10px;
+      border-radius: 3px;
+      margin-bottom: 24px;
+    }
+
+    .post-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      letter-spacing: 2px;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .post-subtitle {
+      font-family: 'Merriweather', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .post-meta .dot { color: var(--border); }
+
+    .post-meta .read-time { color: var(--orange); }
+
+    /* ── HERO PHOTO ── */
+    .post-photo {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 36px 24px 0;
+    }
+
+    .post-photo img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      object-position: center 55%;
+      border-radius: 8px;
+      display: block;
+      border: 1px solid var(--border);
+    }
+
+    .post-photo figcaption {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+      letter-spacing: 0.2px;
+    }
+
+    /* ── CONTENT ── */
+    .post-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .post-content p {
+      font-family: 'Merriweather', serif;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 28px;
+    }
+
+    .post-content p:first-child::first-letter {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4.2rem;
+      float: left;
+      line-height: 0.85;
+      margin: 4px 12px 0 0;
+      color: var(--orange);
+    }
+
+    .post-content .pullquote {
+      border-left: 3px solid var(--orange);
+      padding: 4px 0 4px 24px;
+      margin: 40px 0;
+    }
+
+    .post-content .pullquote p {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: 0;
+    }
+
+    .post-content .closing {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-style: normal;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      margin-top: 48px;
+    }
+
+    .post-content .closing strong {
+      color: var(--orange);
+      font-weight: 600;
+    }
+
+    /* ── AUTHOR CARD ── */
+    .author-card {
+      max-width: 720px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+
+    .author-inner {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .author-label {
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    .author-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+
+    .author-bio {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── BACK LINK ── */
+    .back-section {
+      max-width: 720px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      text-decoration: none;
+      border: 1px solid var(--orange);
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .back-btn:hover {
+      background: var(--orange);
+      color: #000;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      .hero { padding: 40px 16px 32px; }
+      .post-photo { padding: 28px 16px 0; }
+      .post-photo img { height: 320px; }
+      .post-content { padding: 36px 16px 60px; }
+      .author-card, .back-section { padding: 0 16px; }
+      .post-content p:first-child::first-letter { font-size: 3.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="https://blog.tnvolman.com">TNVOLMAN</a>
+    <a class="nav-back" href="/writing">Writing</a>
+  </nav>
+
+  <article>
+
+    <div class="hero">
+      <span class="category-tag">Faith &amp; Testimony</span>
+      <h1 class="post-title">Filled</h1>
+      <p class="post-subtitle">You just never know when the Lord is going to speak.</p>
+      <div class="post-meta">
+        <span>Michael McClanahan</span>
+        <span class="dot">·</span>
+        <span>August 24, 2026</span>
+        <span class="dot">·</span>
+        <span class="read-time">4 min read</span>
+      </div>
+    </div>
+
+    <figure class="post-photo">
+      <img src="/filled.jpg" alt="Two glasses on a wooden table — one filled with clear water and a golden spark, the other filled with opaque black liquid">
+      <figcaption>You are always filled with something</figcaption>
+    </figure>
+
+    <div class="post-content">
+
+      <p>I went to a concert tonight. I went to worship, to enjoy the music, to be in the room with God's people. But somewhere between the last song and my pastor's closing words, something landed in my heart that I'm still pondering.</p>
+
+      <div class="pullquote">
+        <p>“Be filled with the Spirit.”</p>
+      </div>
+
+      <p>It sounds simple. It sounds like something I already know. But here's what hit me tonight — being filled isn't just a spiritual achievement to pursue. It's a law of capacity. You are always filled with something. The question is never “are you full?” The question is always “full of what?”</p>
+
+      <p>Ephesians 5:18 doesn't say try to be filled. It says “be filled” — and in the original language it's a continuous command. Keep being filled. Stay filled. Because the moment you stop being actively filled with the Spirit, something else moves in. Empty space doesn’t stay empty for long. Something always rushes in to fill it.</p>
+
+      <p>That something doesn't announce itself. It doesn't knock on the door and say “excuse me, I'm here to take God's place.” It's just the scroll you pick up first in the morning. It's the stress you build up inside instead of bringing to prayer. It's the aspirations that stopped being surrendered and started being served. It's not always darkness. Sometimes it's just “busyness” of life. Sometimes it's good things that quietly became first things.</p>
+
+      <p>And before long, you're running on something other than Him. And you can feel it — that low-grade emptiness, that striving without peace, that doing without being.</p>
+
+      <p>Jesus said in John 7:37 — “If any man thirst, let him come unto me and drink." The condition is thirst. Which means the first thing I have to ask myself is whether I even want to be filled. Whether I've stayed hungry. Whether I've protected that hunger or slowly, quietly fed it other things until it stopped growling. And you begin to wonder where the thirst and hunger for righteousness went.</p>
+
+      <p>God reminded me that worship keeps you hungry. The Word keeps you filled. Gratitude keeps you oriented toward the Giver instead of the gifts. These aren't the rewards of being filled with the Spirit — they're the pathway back to it!</p>
+
+      <p>I don't want to just be busy for God. I don't want to build things in His name while running on empty. I want to be so full of Him that what spills out of me when life bumps into me is actually Him — not my opinions, not my stress, not my aspirations dressed up in scripture.</p>
+
+      <p>Tonight was a reminder. A gentle, firm, loving reminder.</p>
+
+      <div class="pullquote">
+        <p>“Be filled.” Keep being filled. Guard what fills you.</p>
+      </div>
+
+      <p>Because something always will.</p>
+
+      <div class="closing">
+        <p>Michael McClanahan is the founder of <strong>The Forge</strong> — a Kingdom-first AI company building faithful tools for the Church. He lives in Wilson, NC with his wife Tonia.</p>
+      </div>
+
+    </div>
+
+  </article>
+
+  <div class="author-card">
+    <div class="author-inner">
+      <span class="author-label">About the Author</span>
+      <span class="author-name">Michael McClanahan</span>
+      <p class="author-bio">Husband to Tonia. Dad to six. 28 years in supply chain. Founder of The Forge — building AI agents for the Church. Wilson, NC. Romans 5:8.</p>
+    </div>
+  </div>
+
+  <div class="back-section">
+    <a class="back-btn" href="/writing">← All Writing</a>
+  </div>
+
+<footer style="border-top:1px solid rgba(255,130,0,0.14);margin-top:48px;padding:28px 32px;background:#111111">
+  <p style="font-size:12px;color:rgba(255,255,255,0.4);line-height:1.7;max-width:760px;margin:0 auto;text-align:center;font-family:'Inter',sans-serif">This is the personal blog of Michael McClanahan (TNVOLMAN). All content reflects my own faith, story, and views. It is not affiliated with, endorsed by, or representing any political figure, organization, government entity, company, or financial service. Nothing here is financial advice or a solicitation of any kind.</p>
+</footer>
+<script data-goatcounter="https://tnvolman.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
