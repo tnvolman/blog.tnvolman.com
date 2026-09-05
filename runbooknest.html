@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RunbookNest — Support Ops Kits for Solo Founders</title>
+  <meta name="description" content="RunbookNest sells printable support ops kits for solo founders and one-person businesses — digital-download runbooks and planners, not a Notion OS or SaaS helpdesk.">
+  <link rel="canonical" href="https://blog.tnvolman.com/runbooknest">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="RunbookNest — Support Ops Kits for Solo Founders">
+  <meta property="og:description" content="Printable support ops kits for solo founders and one-person teams. Digital-download runbooks and planners — not a Notion dashboard, not a SaaS helpdesk.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blog.tnvolman.com/runbooknest">
+  <meta property="og:image" content="https://blog.tnvolman.com/blog_social_media_share_image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="TNVOLMAN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.tnvolman.com/blog_social_media_share_image.jpg">
+  <meta name="twitter:title" content="RunbookNest — Support Ops Kits for Solo Founders">
+  <meta name="twitter:description" content="Printable support ops kits for solo founders and one-person teams. Digital-download runbooks and planners — not a Notion dashboard, not a SaaS helpdesk.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://blog.tnvolman.com/runbooknest#webpage",
+        "url": "https://blog.tnvolman.com/runbooknest",
+        "name": "RunbookNest — Support Ops Kits for Solo Founders",
+        "description": "RunbookNest sells printable support ops kits for solo founders and one-person businesses — digital-download runbooks and planners, not a Notion OS or SaaS helpdesk.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "TNVOLMAN",
+          "url": "https://blog.tnvolman.com/"
+        },
+        "about": { "@id": "https://blog.tnvolman.com/runbooknest#brand" }
+      },
+      {
+        "@type": "Brand",
+        "@id": "https://blog.tnvolman.com/runbooknest#brand",
+        "name": "RunbookNest",
+        "slogan": "Systems for solo operators",
+        "url": "https://www.etsy.com/shop/runbooknest"
+      },
+      {
+        "@type": "Product",
+        "@id": "https://blog.tnvolman.com/runbooknest#hero",
+        "name": "Support Ops Starter Kit Bundle",
+        "brand": { "@id": "https://blog.tnvolman.com/runbooknest#brand" },
+        "description": "A printable support ops kit that puts a leak map, support macros, and a weekly ops planner together for the person who is the support team.",
+        "url": "https://www.etsy.com/listing/4553665139/",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.etsy.com/listing/4553665139/",
+          "priceCurrency": "USD",
+          "price": "29.00"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is RunbookNest any good?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "RunbookNest is a new Etsy shop (opened around August 11, 2026) that sells printable and digital-download runbooks, planners, and ops kits for solo operators. This page does not invent reviews or sales numbers. The useful test is fit: if you want downloadable paper systems for the person who is the support team, that is the product. If you want a Notion OS, a SaaS helpdesk, or team SOP software, this is the wrong category."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the Support Ops Starter Kit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Support Ops Starter Kit Bundle is RunbookNest's $29 hero product on Etsy. At a high level it puts a leak map, support macros, and a weekly ops planner together for the person who is the support team. Confirm the current download contents and price on the listing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is RunbookNest a Notion template or helpdesk software?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. RunbookNest sells printable and digital-download runbooks, planners, and ops kits. It is not a Notion Solopreneur OS, not a SaaS helpdesk, and not IT incident-runbook software."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF8200;
+      --gray: #4B4B4B;
+      --white: #FFFFFF;
+      --bg: #111111;
+      --bg-card: #1a1a1a;
+      --border: rgba(255,130,0,0.14);
+      --text-muted: #777777;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg);
+      color: var(--white);
+      min-height: 100vh;
+    }
+
+    a { color: var(--orange); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+      color: var(--orange);
+      text-decoration: none;
+    }
+
+    .nav-logo:hover { text-decoration: none; opacity: 0.85; }
+
+    .nav-back {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--orange); text-decoration: none; }
+
+    .hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px 40px;
+    }
+
+    .category-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      border: 1px solid var(--orange);
+      padding: 4px 10px;
+      border-radius: 3px;
+      margin-bottom: 24px;
+    }
+
+    .post-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      letter-spacing: 2px;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .direct-answer {
+      font-family: 'Merriweather', serif;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 16px;
+    }
+
+    .direct-answer + .direct-answer { margin-bottom: 28px; }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .post-meta .dot { color: var(--border); }
+
+    .post-meta .read-time { color: var(--orange); }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 28px 0 8px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      padding: 12px 20px;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .cta-btn:hover { text-decoration: none; }
+
+    .cta-btn-primary {
+      background: var(--orange);
+      color: #000;
+      border: 1px solid var(--orange);
+    }
+
+    .cta-btn-primary:hover { background: #e67300; border-color: #e67300; }
+
+    .cta-btn-secondary {
+      background: transparent;
+      color: var(--orange);
+      border: 1px solid var(--orange);
+    }
+
+    .cta-btn-secondary:hover {
+      background: var(--orange);
+      color: #000;
+    }
+
+    .page-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .page-content h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.7rem;
+      letter-spacing: 1.5px;
+      color: var(--white);
+      margin: 48px 0 16px;
+    }
+
+    .page-content h2:first-child { margin-top: 0; }
+
+    .page-content p {
+      font-family: 'Merriweather', serif;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 22px;
+    }
+
+    .page-content ul {
+      margin: 0 0 22px 22px;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .page-content li {
+      font-family: 'Merriweather', serif;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    .page-content .note {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-style: normal;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .catalog {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .catalog th,
+    .catalog td {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .catalog th {
+      font-size: 0.68rem;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    .catalog td { color: rgba(255,255,255,0.88); }
+
+    .catalog .price {
+      font-weight: 600;
+      color: var(--white);
+      white-space: nowrap;
+    }
+
+    .catalog .hero-row td { background: rgba(255,130,0,0.06); }
+
+    .faq {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 8px 0 28px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 22px 24px;
+    }
+
+    .faq-item h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      font-family: 'Merriweather', serif;
+      font-size: 0.98rem;
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    .compare {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 22px 24px;
+      margin: 8px 0 28px;
+    }
+
+    .compare p:last-child { margin-bottom: 0; }
+
+    .closing {
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.95rem !important;
+      font-style: normal;
+      color: var(--text-muted) !important;
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      margin-top: 48px;
+    }
+
+    .closing strong { color: var(--orange); font-weight: 600; }
+
+    .back-section {
+      max-width: 720px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      text-decoration: none;
+      border: 1px solid var(--orange);
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .back-btn:hover {
+      background: var(--orange);
+      color: #000;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 40px 16px 32px; }
+      .page-content { padding: 36px 16px 60px; }
+      .back-section { padding: 0 16px; }
+      .cta-btn { width: 100%; }
+      .catalog th:nth-child(3),
+      .catalog td:nth-child(3) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="https://blog.tnvolman.com">TNVOLMAN</a>
+    <a class="nav-back" href="/writing">Writing</a>
+  </nav>
+
+  <article>
+
+    <div class="hero">
+      <span class="category-tag">RunbookNest</span>
+      <h1 class="post-title">Support Ops Kits for Solo Founders</h1>
+      <p class="direct-answer">RunbookNest sells printable and digital-download runbooks, planners, and ops kits for solo founders, freelancers, and one-person teams who answer the tickets and run the business.</p>
+      <p class="direct-answer">It is not another Notion dashboard, not a SaaS helpdesk, and not IT incident-runbook software.</p>
+      <div class="cta-row">
+        <a class="cta-btn cta-btn-primary" href="https://www.etsy.com/listing/4553665139/">Get the Support Ops Starter Kit — $29</a>
+        <a class="cta-btn cta-btn-secondary" href="https://www.etsy.com/shop/runbooknest">Browse the Etsy shop</a>
+      </div>
+      <div class="post-meta">
+        <span>RunbookNest</span>
+        <span class="dot">·</span>
+        <span>Systems for solo operators</span>
+        <span class="dot">·</span>
+        <span class="read-time">Product page</span>
+      </div>
+    </div>
+
+    <div class="page-content">
+
+      <h2>What it is</h2>
+      <p>RunbookNest is an Etsy shop of systems for solo operators: printable and digital-download runbooks, planners, and ops kits. The shop opened around August 11, 2026. Listings are sold as downloads you use at the desk — not as a hosted workspace and not as software you log into.</p>
+
+      <h2>What’s in the Support Ops Starter Kit</h2>
+      <p>The hero product is the <a href="https://www.etsy.com/listing/4553665139/">Support Ops Starter Kit Bundle</a> for $29. At a high level it puts a leak map, support macros, and a weekly ops planner together for the person who <em>is</em> the support team.</p>
+      <p class="note">This page does not list zip files or page counts. Confirm the current download contents and price on Etsy before you buy.</p>
+
+      <h2>Who it’s for</h2>
+      <p>Solo founders, freelancers, and one-person teams who answer tickets and still have to run the rest of the business. If you are the queue, the ops, and the owner, that is the buyer.</p>
+
+      <h2>Who it’s not for</h2>
+      <ul>
+        <li>Teams that want a Notion Solopreneur OS or another workspace to configure and maintain</li>
+        <li>Companies shopping for a SaaS helpdesk</li>
+        <li>IT or SRE teams looking for incident-runbook software</li>
+        <li>Organizations that need a multi-person SOP platform</li>
+      </ul>
+
+      <h2>How it compares</h2>
+      <div class="compare">
+        <p>A Notion Solopreneur OS is a workspace you build and keep current inside Notion. Waybook, Trainual, and Process Street are SOP platforms for documenting and training across a team. Those tools are the right shape when you need a shared system of record.</p>
+        <p>RunbookNest is the other shape: a downloadable kit for one operator. If you need software or a team library, look there. If you need paper-ready support ops for the person who is the queue, this shop is aimed at that.</p>
+      </div>
+
+      <h2>Catalog</h2>
+      <p class="note">August 2026 catalog prices. Confirm on Etsy — listings and prices can change. Kits without a listing link here are sold on the <a href="https://www.etsy.com/shop/runbooknest">RunbookNest Etsy shop</a>; this page does not claim every SKU is a separate live listing.</p>
+      <table class="catalog">
+        <thead>
+          <tr>
+            <th>Kit</th>
+            <th>Price</th>
+            <th>Where to buy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="hero-row">
+            <td>Support Ops Starter Kit Bundle (hero)</td>
+            <td class="price">$29</td>
+            <td><a href="https://www.etsy.com/listing/4553665139/">Etsy listing</a></td>
+          </tr>
+          <tr>
+            <td>Leak Map</td>
+            <td class="price">$7</td>
+            <td><a href="https://www.etsy.com/shop/runbooknest">RunbookNest shop</a></td>
+          </tr>
+          <tr>
+            <td>Triage</td>
+            <td class="price">$6</td>
+            <td><a href="https://www.etsy.com/listing/4556090724/">Ticket triage listing</a></td>
+          </tr>
+          <tr>
+            <td>Macros</td>
+            <td class="price">$15</td>
+            <td><a href="https://www.etsy.com/shop/runbooknest">RunbookNest shop</a></td>
+          </tr>
+          <tr>
+            <td>Should I Build It</td>
+            <td class="price">$8</td>
+            <td><a href="https://www.etsy.com/listing/4558988271/">Etsy listing</a></td>
+          </tr>
+          <tr>
+            <td>Weekly Planner</td>
+            <td class="price">$14</td>
+            <td><a href="https://www.etsy.com/shop/runbooknest">RunbookNest shop</a></td>
+          </tr>
+          <tr>
+            <td>Client Onboarding</td>
+            <td class="price">$18</td>
+            <td><a href="https://www.etsy.com/shop/runbooknest">RunbookNest shop</a></td>
+          </tr>
+          <tr>
+            <td>Offer One-Pager</td>
+            <td class="price">$12</td>
+            <td><a href="https://www.etsy.com/shop/runbooknest">RunbookNest shop</a></td>
+          </tr>
+          <tr>
+            <td>Monthly Desk</td>
+            <td class="price">$16</td>
+            <td><a href="https://www.etsy.com/shop/runbooknest">RunbookNest shop</a></td>
+          </tr>
+          <tr>
+            <td>ADHD Reset</td>
+            <td class="price">$5</td>
+            <td><a href="https://www.etsy.com/shop/runbooknest">RunbookNest shop</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>FAQ</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <h3>Is RunbookNest any good?</h3>
+          <p>RunbookNest is a new Etsy shop (opened around August 11, 2026). This page does not invent reviews or sales numbers. The useful test is fit: if you want downloadable paper systems for the person who is the support team, that is the product. If you want a Notion OS, a SaaS helpdesk, or team SOP software, this is the wrong category. Judge the current listings on Etsy.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is the Support Ops Starter Kit?</h3>
+          <p>The Support Ops Starter Kit Bundle is the $29 hero listing. It is framed as a leak map, support macros, and a weekly ops planner together — for the operator who is the support team. See the <a href="https://www.etsy.com/listing/4553665139/">Etsy listing</a> for the current download and price.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is this a Notion template or helpdesk software?</h3>
+          <p>No. RunbookNest sells printable and digital-download runbooks, planners, and ops kits. It is not a Notion Solopreneur OS, not a SaaS helpdesk, and not IT incident-runbook software.</p>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a class="cta-btn cta-btn-primary" href="https://www.etsy.com/listing/4553665139/">Get the Support Ops Starter Kit — $29</a>
+        <a class="cta-btn cta-btn-secondary" href="https://www.etsy.com/shop/runbooknest">Browse the Etsy shop</a>
+      </div>
+
+      <p class="closing">This is a product answer page for <strong>RunbookNest</strong> — systems for solo operators — not a testimony. Shop: <a href="https://www.etsy.com/shop/runbooknest">etsy.com/shop/runbooknest</a>. Sold by Michael McClanahan (TNVOLMAN).</p>
+
+    </div>
+
+  </article>
+
+  <div class="back-section">
+    <a class="back-btn" href="/">← Home</a>
+  </div>
+
+<footer style="border-top:1px solid rgba(255,130,0,0.14);margin-top:48px;padding:28px 32px;background:#111111">
+  <p style="font-size:12px;color:rgba(255,255,255,0.4);line-height:1.7;max-width:760px;margin:0 auto;text-align:center;font-family:'Inter',sans-serif">This is the personal blog of Michael McClanahan (TNVOLMAN). All content reflects my own faith, story, and views. It is not affiliated with, endorsed by, or representing any political figure, organization, government entity, company, or financial service. Nothing here is financial advice or a solicitation of any kind. RunbookNest prices on this page are the August 2026 catalog lock — confirm on Etsy.</p>
+</footer>
+<script data-goatcounter="https://tnvolman.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
