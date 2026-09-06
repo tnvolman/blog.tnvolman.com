@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>When the Nets Come Up Empty — TNVOLMAN</title>
+  <meta name="description" content="Faithfulness that hasn't been rewarded yet — and the quiet question that stopped me cold: You're building for me. But are you walking with me?">
+  <meta property="og:title" content="When the Nets Come Up Empty">
+  <meta property="og:description" content="Faithfulness that hasn't been rewarded yet — and the quiet question that stopped me cold: You're building for me. But are you walking with me?">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://blog.tnvolman.com/when-the-nets-come-up-empty">
+  <meta property="og:image" content="https://blog.tnvolman.com/when-the-nets-come-up-empty-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.tnvolman.com/when-the-nets-come-up-empty-og.jpg">
+  <meta name="twitter:title" content="When the Nets Come Up Empty">
+  <meta name="twitter:description" content="Faithfulness that hasn't been rewarded yet — and the quiet question that stopped me cold: You're building for me. But are you walking with me?">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF8200;
+      --gray: #4B4B4B;
+      --white: #FFFFFF;
+      --bg: #111111;
+      --bg-card: #1a1a1a;
+      --border: rgba(255,130,0,0.14);
+      --text-muted: #777777;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg);
+      color: var(--white);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+      color: var(--orange);
+      text-decoration: none;
+    }
+
+    .nav-back {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--orange); }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px 40px;
+    }
+
+    .category-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      border: 1px solid var(--orange);
+      padding: 4px 10px;
+      border-radius: 3px;
+      margin-bottom: 24px;
+    }
+
+    .post-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      letter-spacing: 2px;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .post-meta .dot { color: var(--border); }
+
+    .post-meta .read-time { color: var(--orange); }
+
+    /* ── HERO PHOTO ── */
+    .post-photo {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 36px 24px 0;
+    }
+
+    .post-photo img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      object-position: center 48%;
+      border-radius: 8px;
+      display: block;
+      border: 1px solid var(--border);
+    }
+
+    .post-photo figcaption {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+      letter-spacing: 0.2px;
+    }
+
+    /* ── CONTENT ── */
+    .post-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .post-content p {
+      font-family: 'Merriweather', serif;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 28px;
+    }
+
+    .post-content p:first-child::first-letter {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4.2rem;
+      float: left;
+      line-height: 0.85;
+      margin: 4px 12px 0 0;
+      color: var(--orange);
+    }
+
+    .post-content em {
+      font-style: italic;
+    }
+
+    .post-content .pullquote {
+      border-left: 3px solid var(--orange);
+      padding: 4px 0 4px 24px;
+      margin: 40px 0;
+    }
+
+    .post-content .pullquote p {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: 0;
+    }
+
+    .post-content .section-break {
+      border: none;
+      border-top: 1px solid var(--border);
+      width: 72px;
+      margin: 40px auto;
+    }
+
+    .post-content .closing {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-style: normal;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      margin-top: 48px;
+    }
+
+    .post-content .closing strong {
+      color: var(--orange);
+      font-weight: 600;
+    }
+
+    /* ── AUTHOR CARD ── */
+    .author-card {
+      max-width: 720px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+
+    .author-inner {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .author-label {
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    .author-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+
+    .author-bio {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── BACK LINK ── */
+    .back-section {
+      max-width: 720px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      text-decoration: none;
+      border: 1px solid var(--orange);
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .back-btn:hover {
+      background: var(--orange);
+      color: #000;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      .hero { padding: 40px 16px 32px; }
+      .post-photo { padding: 28px 16px 0; }
+      .post-photo img { height: 320px; }
+      .post-content { padding: 36px 16px 60px; }
+      .author-card, .back-section { padding: 0 16px; }
+      .post-content p:first-child::first-letter { font-size: 3.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="https://blog.tnvolman.com">TNVOLMAN</a>
+    <a class="nav-back" href="/writing">Writing</a>
+  </nav>
+
+  <article>
+
+    <div class="hero">
+      <span class="category-tag">Faith &amp; Testimony</span>
+      <h1 class="post-title">When the Nets Come Up Empty</h1>
+      <div class="post-meta">
+        <span>Michael McClanahan</span>
+        <span class="dot">·</span>
+        <span>September 6, 2026</span>
+        <span class="dot">·</span>
+        <span class="read-time">7 min read</span>
+      </div>
+    </div>
+
+    <figure class="post-photo">
+      <img src="/when-the-nets-come-up-empty.jpg" alt="Calm lake at sunrise with a solitary boat silhouette against orange sky">
+      <figcaption>Something quiet. Something waiting.</figcaption>
+    </figure>
+
+    <div class="post-content">
+
+      <p>I have reminders set on my phone. Multiple ones. Scattered through my day like little anchors — small digital nudges that whisper <em>it's in God's time, Michael. His timing, not yours.</em> I put them there on purpose because I knew I would need them. I just didn't know how much.</p>
+
+      <p>I have been building. Hard. For a long time now. A pastoral AI tool for small church pastors who feel alone at 2am with a decision they can't talk to anyone about. A couples finance app my wife and I built together. A web studio to help churches get online with dignity. Another studio running parallel to reach beyond the church walls. All of it born from real calling, real obedience, real love for God and for people. None of it from ego. I want my wife Tonia to retire by May 2027 so she can be present for the grandchildren we don't even have yet. All of it born from a calling that was placed in my hands by someone I will never forget, in a moment I did not see coming.</p>
+
+      <p>Good desires. Real desires. Kingdom desires.</p>
+
+      <hr class="section-break">
+
+      <p>And yet. The nets keep coming up empty.</p>
+
+      <p>I have been casting wide. Trusting the process. Doing the work. Showing up in the evenings and on weekends after a full day in pharma supply chain, pouring hours into things I genuinely believe God put in my hands to build. And I have watched, month after month, as nothing has come to fruition the way I imagined it would. Not yet. Maybe not the way I planned at all.</p>
+
+      <p>There is a particular kind of exhaustion that comes not from laziness but from faithfulness that hasn't been rewarded yet. You can't explain it to someone who hasn't felt it. It doesn't look dramatic from the outside. You just keep showing up. You keep casting. And you keep pulling up empty nets and telling yourself — and meaning it — that His mercies are new every morning.</p>
+
+      <div class="pullquote">
+        <p>It is of the LORD's mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.<br>Lamentations 3:22-23.</p>
+      </div>
+
+      <p>I know that verse. I have leaned on that verse. But knowing a verse and being transformed by it are two very different things.</p>
+
+      <p>Tonight something shifted.</p>
+
+      <p>I wasn't in a church service. I wasn't on my knees in some dramatic moment of revelation. I was just still enough, finally, to hear what God has been trying to say through all the quiet and all the waiting.</p>
+
+      <p><em>Michael. You're building for me. But are you walking with me?</em></p>
+
+      <p>That stopped me cold.</p>
+
+      <p>Because the honest answer — the one I don't love admitting — is that somewhere in the building, in the striving, in the noble pursuit of good and Kingdom things, I had let the distance grow. Not from rebellion. Not from sin I was hiding. Just from busyness. From effort. From trying so hard to do the right things that I forgot to simply <em>be</em> with the One I was doing them for.</p>
+
+      <p>Our desires aren't always His desires. And even when they are — even when the calling is real and the work is good — He still wants us to want <em>Him</em> more than we want the fruit.</p>
+
+      <p>I am not writing this as someone who has it figured out. I am writing this as a man who woke up — or maybe was woken up — to the realization that the most important thing on my entire list of important things is the one I had been squeezing into the margins.</p>
+
+      <p>My relationship with Jesus. Not my theology. Not my obedience. Not my ministry. My friendship with Him.</p>
+
+      <p>I want Jesus to be my best friend again. Not a concept I build around. Not a mission statement I frame on the wall. My actual best friend. The one I talk to first. The one I check in with before I open the laptop. The one whose voice I know well enough to recognize when He's redirecting me.</p>
+
+      <p>It's never too late for that. That's the mercy that's new every morning. Not just forgiveness for yesterday — but a fresh invitation today. <em>Come back. Walk with me. The nets can wait.</em></p>
+
+      <p>Maybe you're reading this and you're in the middle of your own season of empty nets. You're doing the right things. You're showing up. You believe God is faithful because you have seen Him be faithful before. But the waiting is long and the results are thin and some mornings the faith wavers just enough to scare you a little.</p>
+
+      <p>That wavering doesn't disqualify you. It just means you're human and you're honest. God can work with both of those.</p>
+
+      <p>Cast the net again. But before you do — talk to Him. Not about the net. Just talk to Him. Rebuild that. Make that the one thing.</p>
+
+      <p>Everything else follows.</p>
+
+      <hr class="section-break">
+
+      <div class="pullquote">
+        <p>“But seek ye first the kingdom of God and his righteousness and all these things shall be added unto you."<br>Matthew 6:33</p>
+      </div>
+
+      <div class="closing">
+        <p>Michael McClanahan is the founder of <strong>The Forge</strong> — a Kingdom-first AI company building faithful tools for the Church. He lives in Wilson, NC with his wife Tonia.</p>
+      </div>
+
+    </div>
+
+  </article>
+
+  <div class="author-card">
+    <div class="author-inner">
+      <span class="author-label">About the Author</span>
+      <span class="author-name">Michael McClanahan</span>
+      <p class="author-bio">Husband to Tonia. Dad to six. 28 years in supply chain. Founder of The Forge — building AI agents for the Church. Wilson, NC. Romans 5:8. I write with Journey, my personal agent.</p>
+    </div>
+  </div>
+
+  <div class="back-section">
+    <a class="back-btn" href="/writing">← All Writing</a>
+  </div>
+
+<footer style="border-top:1px solid rgba(255,130,0,0.14);margin-top:48px;padding:28px 32px;background:#111111">
+  <p style="font-size:12px;color:rgba(255,255,255,0.4);line-height:1.7;max-width:760px;margin:0 auto;text-align:center;font-family:'Inter',sans-serif">This is the personal blog of Michael McClanahan (TNVOLMAN). All content reflects my own faith, story, and views. It is not affiliated with, endorsed by, or representing any political figure, organization, government entity, company, or financial service. Nothing here is financial advice or a solicitation of any kind.</p>
+</footer>
+<script data-goatcounter="https://tnvolman.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
