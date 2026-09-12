@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>51 — TNVOLMAN</title>
+  <meta name="description" content="A birthday reflection on September 11, grace from a Knoxville trailer court, Tonia, and still building at 51.">
+  <meta property="og:title" content="51">
+  <meta property="og:description" content="A birthday reflection on September 11, grace from a Knoxville trailer court, Tonia, and still building at 51.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://blog.tnvolman.com/51">
+  <meta property="og:image" content="https://blog.tnvolman.com/51-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.tnvolman.com/51-og.jpg">
+  <meta name="twitter:title" content="51">
+  <meta name="twitter:description" content="A birthday reflection on September 11, grace from a Knoxville trailer court, Tonia, and still building at 51.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF8200;
+      --gray: #4B4B4B;
+      --white: #FFFFFF;
+      --bg: #111111;
+      --bg-card: #1a1a1a;
+      --border: rgba(255,130,0,0.14);
+      --text-muted: #777777;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg);
+      color: var(--white);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+      color: var(--orange);
+      text-decoration: none;
+    }
+
+    .nav-back {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--orange); }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px 40px;
+    }
+
+    .category-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      border: 1px solid var(--orange);
+      padding: 4px 10px;
+      border-radius: 3px;
+      margin-bottom: 24px;
+    }
+
+    .post-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      letter-spacing: 2px;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .post-subtitle {
+      font-family: 'Merriweather', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .post-meta .dot { color: var(--border); }
+
+    .post-meta .read-time { color: var(--orange); }
+
+    /* ── HERO PHOTO ── */
+    .post-photo {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 36px 24px 0;
+    }
+
+    .post-photo img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      object-position: center 52%;
+      border-radius: 8px;
+      display: block;
+      border: 1px solid var(--border);
+    }
+
+    .post-photo figcaption {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+      letter-spacing: 0.2px;
+    }
+
+    /* ── CONTENT ── */
+    .post-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .post-content h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.55rem;
+      letter-spacing: 2px;
+      color: var(--orange);
+      margin: 52px 0 20px;
+    }
+
+    .post-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .post-content p {
+      font-family: 'Merriweather', serif;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 28px;
+    }
+
+    .post-content p:first-of-type::first-letter {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4.2rem;
+      float: left;
+      line-height: 0.85;
+      margin: 4px 12px 0 0;
+      color: var(--orange);
+    }
+
+    .post-content em {
+      font-style: italic;
+    }
+
+    .post-content .pullquote {
+      border-left: 3px solid var(--orange);
+      padding: 4px 0 4px 24px;
+      margin: 40px 0;
+    }
+
+    .post-content .pullquote p {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: 0;
+    }
+
+    .post-content .section-break {
+      border: none;
+      border-top: 1px solid var(--border);
+      width: 72px;
+      margin: 40px auto;
+    }
+
+    .post-content .closing {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      margin-top: 48px;
+    }
+
+    .post-content .closing p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* ── AUTHOR CARD ── */
+    .author-card {
+      max-width: 720px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+
+    .author-inner {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .author-label {
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    .author-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+
+    .author-bio {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── BACK LINK ── */
+    .back-section {
+      max-width: 720px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      text-decoration: none;
+      border: 1px solid var(--orange);
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .back-btn:hover {
+      background: var(--orange);
+      color: #000;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      .hero { padding: 40px 16px 32px; }
+      .post-photo { padding: 28px 16px 0; }
+      .post-photo img { height: 320px; }
+      .post-content { padding: 36px 16px 60px; }
+      .author-card, .back-section { padding: 0 16px; }
+      .post-content p:first-of-type::first-letter { font-size: 3.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="https://blog.tnvolman.com">TNVOLMAN</a>
+    <a class="nav-back" href="/writing">Writing</a>
+  </nav>
+
+  <article>
+
+    <div class="hero">
+      <span class="category-tag">Faith &amp; Testimony</span>
+      <h1 class="post-title">51</h1>
+      <p class="post-subtitle">A Birthday Reflection — September 12, 2026</p>
+      <div class="post-meta">
+        <span>Michael McClanahan</span>
+        <span class="dot">·</span>
+        <span>September 12, 2026</span>
+        <span class="dot">·</span>
+        <span class="read-time">6–7 min read</span>
+      </div>
+    </div>
+
+    <figure class="post-photo">
+      <img src="/51.jpg" alt="Flight 93 memorial plaque">
+      <figcaption>Flight 93 memorial · September 11</figcaption>
+    </figure>
+
+    <div class="post-content">
+
+      <h2>Yesterday</h2>
+
+      <p>But before I get to 51, I must stop at yesterday. September 11, 2026. Twenty-five years since the world changed. I remember exactly where I was. I remember exactly how it felt. The day before my 26th birthday — and it was one of the saddest birthdays I've ever had, because the whole country was grieving together and nothing felt right about celebrating anything.</p>
+
+      <p>There are days that mark you. That day marked all of us. Nearly 3,000 people who woke up that morning not knowing it was their last. Families who kissed someone goodbye and never got to say anything else. First responders who ran toward what everyone else was running from.</p>
+
+      <p>Twenty-five years later, I still think we owe it to every single one of them to remember — not as a history lesson, not as a news segment, but as an act of honor. They deserve to be remembered by name, by story, by the weight of what was lost. It matters that I remember that day. It matters that we all do!</p>
+
+      <h2>How I Got Here</h2>
+
+      <p>There's something about a birthday that makes a man want to stop and look around. Not in a gloomy way.  More like standing on a hill and just… taking in the view.</p>
+
+      <p>51 years old. And I am not who I thought I would be — I am more.</p>
+
+      <p>As I’ve shared previously, I grew up in a low-income trailer court in Knoxville. My parents were not Christians at the time, but they loved me and provided everything they could. That's not a small thing — I want to say it clearly. They gave me what they had. And it was right there in that trailer court that a faithful deacon showed up, week after week, with an invitation to ride the church bus. When I was 13 years old, I gave my life to Christ, and everything — every single thing that matters about my life — flows from that moment. Romans 5:8 is not just my life verse. It is my autobiography.</p>
+
+      <p>I went to college planning to go to seminary, maybe become a military chaplain. Had the whole thing mapped out. And then a woman named Tonia asked me out, and I proposed two months later, and that was the best decision either of us ever made. June 27, 1998. Twenty-eight years of marriage. Twenty-eight years of being chosen by someone who saw me clearly and stayed anyway.</p>
+
+      <p>Tonia. I have to write her name and just let it sit there for a second. That woman has been beside me through every version of myself — the young man who had more dreams than sense, the husband learning what love actually costs, the father, the builder, the bi-vocational visionary who works evenings and weekends chasing something most people can't even see yet. She is my greatest earthly gift.</p>
+
+      <p>Four kids, all adults now, all walking with God — and two of them married with spouses who love God too, so the table just keeps getting bigger. I did not grow up in a home where faith was the foundation — and somehow God gave me children who are building their lives on it, and brought people alongside them who are building the same way. That's not my doing. That's grace. That's the faithfulness of a God who doesn't just save one generation — He can redeem the whole line.</p>
+
+      <h2>What I'm Building</h2>
+
+      <p>For 28 years I have worked for a company whose purpose is to save and improve lives. It has been faithful provision — the kind that funds a family, funds a calling, funds a dream. And every evening and every weekend, for longer than most people would have lasted, I have been building something else alongside it. Something I believe God put in my hands to build.</p>
+
+      <p>There is a gap in the AI technology space where the Church should be standing — and right now, mostly isn't. That burden is what keeps me building. Not the products themselves. The products are just the vehicle. What matters is that when Christians open an AI tool, the answer they get is governed by nothing but the Word of God. Not trends. Not corporate guardrails. Not whatever the culture decided was acceptable this week. The Word. Full stop.</p>
+
+      <p>The Church has always been called to lead — not follow, not catch up, not scramble to keep pace with the world. If AI is going to shape how people think, how they counsel, how they make decisions — then Kingdom voices need to be in that space first, building with integrity, not arriving late and apologizing for the delay. When I felt that call, my answer was emotional. Lord, thank you for still wanting to send me.</p>
+
+      <p>At 51, I am building deliberately.  I am not a hustle-culture guy.  I don't build fast and break things. I build with purpose. I build with wisdom. I build the way a man builds something he intends to still be standing when he's gone. Faith first. Build intentionally. Move with wisdom. That's not a slogan. That's a conviction.</p>
+
+      <h2>A Gift</h2>
+
+      <p>51 years old. I came from nothing and I have everything that matters. A wife who chose me first and has never stopped. Kids who love God. A calling that didn't die — it just waited until I was ready for the form it was always meant to take. A job that has been faithful provision even when it felt like a ceiling. And a vision that I believe with everything in me is from God — not because I'm special, but because He is faithful, and He finishes what He starts.</p>
+
+      <p>I don't know exactly what 51 to 52 looks like. I don't know when the first autonomous revenue comes in. I don't know when The Forge becomes what I see when I close my eyes. But I know who holds all of that. And I know that Romans 5:8 was true before I deserved it, which means His faithfulness doesn't depend on my performance.</p>
+
+      <p>So today I receive 51 as a gift. Not a milestone to manage. Not a number to dread. A gift. From a God who found a little boy in a trailer court and decided he was worth saving — and worth using.</p>
+
+      <p>And I receive it on the other side of a day that reminded me how fragile and precious every single year is. September 11 taught a generation that tomorrow is not promised. I don't take 51 for granted. Not one day of it.</p>
+
+      <p>Here I am, Lord. Still building. Still believing. Still yours.</p>
+
+      <div class="closing">
+        <p>— Michael McClanahan, September 12, 2026</p>
+      </div>
+
+    </div>
+
+  </article>
+
+  <div class="author-card">
+    <div class="author-inner">
+      <span class="author-label">About the Author</span>
+      <span class="author-name">Michael McClanahan</span>
+      <p class="author-bio">Husband to Tonia. Dad to six. 28 years in supply chain. Founder of The Forge — building AI agents for the Church. Wilson, NC. Romans 5:8. I write with Journey, my personal agent.</p>
+    </div>
+  </div>
+
+  <div class="back-section">
+    <a class="back-btn" href="/writing">← All Writing</a>
+  </div>
+
+<footer style="border-top:1px solid rgba(255,130,0,0.14);margin-top:48px;padding:28px 32px;background:#111111">
+  <p style="font-size:12px;color:rgba(255,255,255,0.4);line-height:1.7;max-width:760px;margin:0 auto;text-align:center;font-family:'Inter',sans-serif">This is the personal blog of Michael McClanahan (TNVOLMAN). All content reflects my own faith, story, and views. It is not affiliated with, endorsed by, or representing any political figure, organization, government entity, company, or financial service. Nothing here is financial advice or a solicitation of any kind.</p>
+</footer>
+<script data-goatcounter="https://tnvolman.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
