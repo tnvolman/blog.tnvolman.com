@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 2 AM Pastor Problem — TNVOLMAN</title>
+  <meta name="description" content="After the calling, I went looking for what already existed. What I found could not carry the night.">
+  <meta property="og:title" content="The 2 AM Pastor Problem — TNVOLMAN">
+  <meta property="og:description" content="After the calling, I went looking for what already existed. What I found could not carry the night.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://blog.tnvolman.com/the-2-am-pastor-problem">
+  <meta property="og:image" content="https://blog.tnvolman.com/blog_social_media_share_image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.tnvolman.com/blog_social_media_share_image.jpg">
+  <meta name="twitter:title" content="The 2 AM Pastor Problem — TNVOLMAN">
+  <meta name="twitter:description" content="After the calling, I went looking for what already existed. What I found could not carry the night.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF8200;
+      --gray: #4B4B4B;
+      --white: #FFFFFF;
+      --bg: #111111;
+      --bg-card: #1a1a1a;
+      --border: rgba(255,130,0,0.14);
+      --text-muted: #777777;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg);
+      color: var(--white);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+      color: var(--orange);
+      text-decoration: none;
+    }
+
+    .nav-back {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--orange); }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px 40px;
+    }
+
+    .category-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      border: 1px solid var(--orange);
+      padding: 4px 10px;
+      border-radius: 3px;
+      margin-bottom: 24px;
+    }
+
+    .post-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      letter-spacing: 2px;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .post-subtitle {
+      font-family: 'Merriweather', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .post-meta .dot { color: var(--border); }
+
+    .post-meta .read-time { color: var(--orange); }
+
+    /* ── CONTENT ── */
+    .post-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .post-content p {
+      font-family: 'Merriweather', serif;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 28px;
+    }
+
+    .post-content p:first-child::first-letter {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4.2rem;
+      float: left;
+      line-height: 0.85;
+      margin: 4px 12px 0 0;
+      color: var(--orange);
+    }
+
+    .post-content em {
+      font-style: italic;
+    }
+
+    .post-content .pullquote {
+      border-left: 3px solid var(--orange);
+      padding: 4px 0 4px 24px;
+      margin: 40px 0;
+    }
+
+    .post-content .pullquote p {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: 0;
+    }
+
+    .post-content .closing {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-style: normal;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      margin-top: 48px;
+    }
+
+    .post-content .closing strong {
+      color: var(--orange);
+      font-weight: 600;
+    }
+
+    /* ── AUTHOR CARD ── */
+    .author-card {
+      max-width: 720px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+
+    .author-inner {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .author-label {
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    .author-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+
+    .author-bio {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── BACK LINK ── */
+    .back-section {
+      max-width: 720px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      text-decoration: none;
+      border: 1px solid var(--orange);
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .back-btn:hover {
+      background: var(--orange);
+      color: #000;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      .hero { padding: 40px 16px 32px; }
+      .post-content { padding: 36px 16px 60px; }
+      .author-card, .back-section { padding: 0 16px; }
+      .post-content p:first-child::first-letter { font-size: 3.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="https://blog.tnvolman.com">TNVOLMAN</a>
+    <a class="nav-back" href="/writing">Writing</a>
+  </nav>
+
+  <article>
+
+    <div class="hero">
+      <span class="category-tag">The Forge</span>
+      <h1 class="post-title">The 2 AM Pastor Problem</h1>
+      <p class="post-subtitle">After the calling, I went looking for what already existed. What I found could not carry the night.</p>
+      <div class="post-meta">
+        <span>Michael McClanahan</span>
+        <span class="dot">·</span>
+        <span>September 3, 2026</span>
+        <span class="dot">·</span>
+        <span class="read-time">5 min read</span>
+      </div>
+    </div>
+
+    <div class="post-content">
+
+      <p>April 25 wasn't a product idea.</p>
+
+      <p>God asked me a question. <em>How could agentic AI advance the Kingdom?</em> I sat with it for about forty-eight hours. Then I started moving.</p>
+
+      <p>The first thing I did after saying yes was look at what was already supposed to serve the Church.</p>
+
+      <p>I expected to find something I could join. A tool built for the pastor who gets the call at 2 AM. Marriage coming apart. A kid in trouble. A funeral in the morning and no one on staff who has walked that road with him. I expected to find something that would stand with him in that hour without handing him a confident sentence that isn't true.</p>
+
+      <p>I didn't find that.</p>
+
+      <p>I found polish. I found verses in the right places. I found tools that sounded like they belonged in the Church and then quietly could not bear the weight of the people they claimed to serve. Not because the people building them were insincere. Because sounding faithful and being submitted to the Word are not the same job.</p>
+
+      <p>That is the gap the calling dropped me into.</p>
+
+      <p>Not a missing feature. A missing accountability.</p>
+
+      <p>If I am going to build anything because God asked, I am accountable to that pastor. Not to a market. Not to a category called "Christian AI." To the man who does not get to sleep when his people are breaking. The one in a congregation of eighty who has never had a theologian down the hall and is doing his best with what he has.</p>
+
+      <p>I keep his night in front of me when I work.</p>
+
+      <p>Full-time supply chain by day. Stolen hours at night. The question on April 25 did not come with a budget or a team or a clean runway. It came with a who.</p>
+
+      <p>That pastor is the who.</p>
+
+      <p>I am not writing this to announce what I'm building. I already said what I will not build. A costume. A verse taped on a system that will not submit. This is the other half of that sentence.</p>
+
+      <p>Who it's for.</p>
+
+      <p>The night I cannot outsource.</p>
+
+      <p>If the work cannot stand with him at 2 AM, it is not the work I was asked to do.</p>
+
+      <p>That's the problem. And that's the assignment.</p>
+
+      <div class="closing">
+        <p>Michael McClanahan is the founder of <strong>The Forge</strong> — a Kingdom-first AI company building faithful tools for the Church. He lives in Wilson, NC with his wife Tonia.</p>
+      </div>
+
+    </div>
+
+  </article>
+
+  <div class="author-card">
+    <div class="author-inner">
+      <span class="author-label">About the Author</span>
+      <span class="author-name">Michael McClanahan</span>
+      <p class="author-bio">Husband to Tonia. Dad to six. 28 years in supply chain. Founder of The Forge — building AI agents for the Church. Wilson, NC. Romans 5:8. I write with Journey, my personal agent.</p>
+    </div>
+  </div>
+
+  <div class="back-section">
+    <a class="back-btn" href="/writing">← All Writing</a>
+  </div>
+
+<footer style="border-top:1px solid rgba(255,130,0,0.14);margin-top:48px;padding:28px 32px;background:#111111">
+  <p style="font-size:12px;color:rgba(255,255,255,0.4);line-height:1.7;max-width:760px;margin:0 auto;text-align:center;font-family:'Inter',sans-serif">This is the personal blog of Michael McClanahan (TNVOLMAN). All content reflects my own faith, story, and views. It is not affiliated with, endorsed by, or representing any political figure, organization, government entity, company, or financial service. Nothing here is financial advice or a solicitation of any kind.</p>
+</footer>
+<script data-goatcounter="https://tnvolman.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
