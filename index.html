@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TNVOLMAN — Michael McClanahan</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="description" content="Personal testimony and writing from Michael McClanahan — faith, calling, and the story of a deacon who kept showing up.">
   <meta property="og:title" content="TNVOLMAN — Michael McClanahan">
   <meta property="og:description" content="Personal testimony and writing from Michael McClanahan — faith, calling, and the story of a deacon who kept showing up.">
@@ -28,7 +31,7 @@
       --bg-card: #1a1a1a;
       --bg-card-hover: #202020;
       --border: rgba(255,130,0,0.14);
-      --text-muted: #777777;
+      --text-muted: #9A9A9A;
     }
 
     html { scroll-behavior: smooth; }
@@ -86,7 +89,7 @@
 
     .nav-cta {
       background: var(--orange) !important;
-      color: var(--white) !important;
+      color: var(--bg) !important;
       padding: 7px 18px;
       border-radius: 4px;
       font-weight: 600 !important;
@@ -155,7 +158,7 @@
     }
 
     .hero-eyebrow {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 600;
       letter-spacing: 5px;
       color: var(--orange);
@@ -190,7 +193,7 @@
       margin-top: 22px;
     }
     .hero-tag {
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 1.8px;
       text-transform: uppercase;
@@ -206,11 +209,11 @@
       flex-direction: column;
       align-items: center;
       gap: 6px;
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 600;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.55);
       cursor: pointer;
       text-decoration: none !important;
     }
@@ -308,7 +311,7 @@
 
     .tag-pill {
       display: inline-block;
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 1.8px;
       text-transform: uppercase;
@@ -351,7 +354,7 @@
     .meta-cat {
       color: var(--orange);
       font-weight: 600;
-      font-size: 11px;
+      font-size: 12px;
       letter-spacing: 0.3px;
       text-transform: uppercase;
     }
@@ -361,7 +364,7 @@
       align-items: center;
       gap: 7px;
       background: var(--orange);
-      color: var(--white);
+      color: var(--bg);
       padding: 10px 22px;
       border-radius: 5px;
       font-size: 13px;
@@ -400,7 +403,7 @@
     }
 
     .card-cat {
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -436,9 +439,9 @@
       margin-top: auto;
     }
 
-    .card-date { font-size: 11.5px; color: var(--text-muted); }
+    .card-date { font-size: 12px; color: var(--text-muted); }
     .card-coming-soon {
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
@@ -479,7 +482,7 @@
       font-family: 'Merriweather', serif;
       font-size: 13.5px;
       font-style: italic;
-      color: rgba(255,255,255,0.38);
+      color: rgba(255,255,255,0.55);
     }
 
     /* ── SIDEBAR ── */
@@ -520,7 +523,7 @@
       margin-bottom: 4px;
     }
     .about-loc {
-      font-size: 11px;
+      font-size: 12px;
       color: var(--text-muted);
       letter-spacing: 0.8px;
       margin-bottom: 14px;
@@ -540,7 +543,7 @@
       margin-bottom: 18px;
     }
     .about-tag {
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.5px;
       padding: 4px 10px;
@@ -605,7 +608,7 @@
     .recent-num {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 24px;
-      color: rgba(255,130,0,0.22);
+      color: rgba(255,130,0,0.65);
       line-height: 1;
       min-width: 28px;
       padding-top: 1px;
@@ -619,8 +622,8 @@
     }
     .recent-title a { color: inherit; }
     .recent-title a:hover { color: var(--orange); text-decoration: none; }
-    .recent-date { font-size: 11px; color: var(--text-muted); }
-    .recent-soon { font-size: 10px; color: rgba(255,130,0,0.4); letter-spacing: 1px; text-transform: uppercase; }
+    .recent-date { font-size: 12px; color: var(--text-muted); }
+    .recent-soon { font-size: 12px; color: rgba(255,130,0,0.4); letter-spacing: 1px; text-transform: uppercase; }
 
     .cat-list { list-style: none; }
     .cat-list li {
@@ -649,7 +652,7 @@
     }
     .cat-link-item:hover { color: var(--orange); text-decoration: none; }
     .cat-badge {
-      font-size: 11px;
+      font-size: 12px;
       color: var(--text-muted);
       background: rgba(255,255,255,0.05);
       padding: 2px 8px;
@@ -693,10 +696,10 @@
       font-family: 'Bebas Neue', sans-serif;
       font-size: 13px;
       letter-spacing: 3px;
-      color: var(--gray);
+      color: var(--text-muted);
       margin-bottom: 14px;
       padding-bottom: 8px;
-      border-bottom: 2px solid var(--gray);
+      border-bottom: 2px solid var(--text-muted);
     }
     .footer-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
     .footer-list a {
@@ -713,14 +716,15 @@
       flex-wrap: wrap;
       gap: 12px;
     }
-    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.28); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.55); }
     .footer-copy strong { color: var(--orange); }
     .footer-identity {
       font-size: 12px;
-      color: rgba(255,255,255,0.28);
+      color: rgba(255,255,255,0.55);
       letter-spacing: 0.3px;
     }
-    .footer-identity span { color: rgba(255,130,0,0.3); margin: 0 7px; }
+    .footer-identity span { color: var(--orange); margin: 0 7px; }
+    .footer-identity span::after { content: "\200B"; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
@@ -753,12 +757,19 @@
       .hero-title { letter-spacing: 5px; }
       .hero-content { padding-bottom: 52px; }
     }
+
+    .brand-mark { width: 28px; height: 28px; border-radius: 6px; vertical-align: middle; margin-right: 10px; flex: none; }
+    .nav-brand, .nav-logo { display: inline-flex; align-items: center; }
+    .scripture-ref { white-space: nowrap; }
+    h1, h2, h3, .hero-eyebrow, .hero-subtitle { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    @media (max-width: 480px) { .hero-subtitle br { display: none; } }
   </style>
 </head>
 <body>
 
   <nav class="navbar">
-    <a href="/" class="nav-brand">TNVOLMAN</a>
+    <a href="/" class="nav-brand"><img class="brand-mark" src="/mark.svg" alt="" width="28" height="28">TNVOLMAN</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="/writing">Writing</a></li>
       <li><a href="https://forge.tnvolman.com" target="_blank">The Forge</a></li>
@@ -775,9 +786,9 @@
     <div class="hero-bg"></div>
     <div class="hero-gradient"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow">Wilson, NC &nbsp;·&nbsp; Est. Knoxville, TN</div>
+      <div class="hero-eyebrow"><span style="white-space:nowrap">Wilson, NC</span> &nbsp;·&nbsp; <span style="white-space:nowrap">Est. Knoxville, TN</span></div>
       <h1 class="hero-title">TNVOLMAN</h1>
-      <p class="hero-subtitle">Michael McClanahan — writing about faith, technology,<br>and building The Forge for the Church.</p>
+      <p class="hero-subtitle">Michael McClanahan — writing about faith, technology, <br>and building The Forge for the Church.</p>
       <div class="hero-tags">
         <span class="hero-tag">Believer</span>
         <span class="hero-tag">Father</span>
@@ -800,7 +811,7 @@
 
       <article class="featured">
         <div class="featured-art">
-          <span class="featured-art-word">FORGE</span>
+          <span class="featured-art-word" aria-hidden="true">FORGE</span>
         </div>
         <div class="featured-body">
           <div>
@@ -934,7 +945,7 @@
 
       <div class="scripture-widget">
         <p class="scripture-text">"But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us."</p>
-        <div class="scripture-ref">Romans 5:8 &nbsp;·&nbsp; KJV</div>
+        <div class="scripture-ref">Romans 5:8</div>
       </div>
 
       <div class="widget">
