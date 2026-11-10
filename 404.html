@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found — TNVOLMAN</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="This page isn't on the blog.">
+  <meta property="og:title" content="Page not found — TNVOLMAN">
+  <meta property="og:description" content="This page isn't on the blog.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blog.tnvolman.com/404">
+  <meta property="og:image" content="https://blog.tnvolman.com/blog_social_media_share_image.jpg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.tnvolman.com/blog_social_media_share_image.jpg">
+  <meta name="twitter:title" content="Page not found — TNVOLMAN">
+  <meta name="twitter:description" content="This page isn't on the blog.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF8200;
+      --gray: #4B4B4B;
+      --white: #FFFFFF;
+      --bg: #111111;
+      --bg-card: #1a1a1a;
+      --bg-card-hover: #202020;
+      --border: rgba(255,130,0,0.14);
+      --text-muted: #9A9A9A;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--orange); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(17,17,17,0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+    }
+
+    .nav-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px;
+      letter-spacing: 5px;
+      color: var(--orange);
+      text-shadow: 0 0 24px rgba(255,130,0,0.35);
+    }
+    .nav-brand:hover { text-decoration: none; opacity: 0.85; }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.4px;
+      color: rgba(255,255,255,0.72);
+      transition: color 0.18s;
+    }
+    .nav-links a:hover { color: var(--orange); text-decoration: none; }
+    .nav-links a.current { color: var(--orange); }
+
+    .nav-cta {
+      background: var(--orange) !important;
+      color: var(--bg) !important;
+      padding: 7px 18px;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      transition: background 0.18s, transform 0.18s !important;
+    }
+    .nav-cta:hover { background: #e67300 !important; transform: translateY(-1px); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      width: 22px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.25s;
+      display: block;
+    }
+
+    .archive-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .section-header h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.9);
+      white-space: nowrap;
+    }
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, rgba(255,130,0,0.3), transparent);
+    }
+
+    .archive-intro {
+      font-family: 'Merriweather', serif;
+      font-size: 15px;
+      font-style: italic;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+
+    .post-list {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .post-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 26px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.22s, background 0.22s, transform 0.22s;
+    }
+    .post-card:hover {
+      border-color: rgba(255,130,0,0.38);
+      background: var(--bg-card-hover);
+      transform: translateY(-3px);
+    }
+
+    .card-cat {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 11px;
+    }
+
+    .card-title {
+      font-family: 'Merriweather', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.45;
+      margin-bottom: 11px;
+    }
+    .card-title a { color: inherit; }
+    .card-title a:hover { color: var(--orange); text-decoration: none; }
+
+    .card-excerpt {
+      font-family: 'Merriweather', serif;
+      font-size: 14px;
+      font-style: italic;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255,130,0,0.09);
+      padding-top: 14px;
+      margin-top: auto;
+    }
+
+    .card-date { font-size: 12px; color: var(--text-muted); }
+    .card-read-more {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--orange);
+    }
+    .card-read-more:hover { text-decoration: underline; }
+
+    .archive-note {
+      margin-top: 36px;
+      font-family: 'Merriweather', serif;
+      font-size: 13.5px;
+      font-style: italic;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .site-footer {
+      background: #0a0a0a;
+      border-top: 1px solid var(--border);
+      padding: 56px 24px 36px;
+      margin-top: 24px;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 32px;
+    }
+    .footer-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 52px;
+      letter-spacing: 7px;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .footer-tagline {
+      font-family: 'Merriweather', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.85;
+      max-width: 340px;
+    }
+    .footer-col-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--text-muted);
+    }
+    .footer-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-list a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.18s;
+    }
+    .footer-list a:hover { color: var(--orange); text-decoration: none; }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.55); }
+    .footer-copy strong { color: var(--orange); }
+    .footer-identity {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.3px;
+    }
+    .footer-identity span { color: var(--orange); margin: 0 7px; }
+    .footer-identity span::after { content: "\200B"; }
+
+    @media (max-width: 960px) {
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .footer-brand-col { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 640px) {
+      .navbar { padding: 0 16px; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 60px; left: 0; right: 0;
+        background: rgba(14,14,14,0.98);
+        padding: 20px 24px;
+        border-bottom: 1px solid var(--border);
+        gap: 16px;
+        z-index: 199;
+      }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      .archive-wrap { padding: 100px 16px 60px; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+    }
+
+    .brand-mark { width: 28px; height: 28px; border-radius: 6px; vertical-align: middle; margin-right: 10px; flex: none; }
+    .nav-brand { display: inline-flex; align-items: center; }
+    .navbar { line-height: 1.6; }
+    .navbar a { text-decoration: none; }
+    .scripture-ref { white-space: nowrap; }
+    h1, h2, h3, .hero-eyebrow, .hero-subtitle { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    @media (max-width: 480px) { .hero-subtitle br { display: none; } }
+    .hamburger { background: none; border: 0; color: inherit; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+  
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 12px;
+      z-index: 400;
+      transform: translateY(-160%);
+      background: var(--orange);
+      color: #111;
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    .skip-link:focus { transform: none; }
+    #content { scroll-margin-top: 76px; }
+
+  
+    .footer-disclaimer {
+      flex: 1 0 100%;
+      max-width: 760px;
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.72);
+    }
+
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <nav class="navbar">
+    <a href="/" class="nav-brand"><img class="brand-mark" src="/mark.svg" alt="" width="28" height="28">TNVOLMAN</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/writing" >Writing</a></li>
+      <li><a href="https://forge.tnvolman.com" target="_blank" rel="noopener noreferrer">The Forge</a></li>
+      <li><a href="https://sanctuary.tnvolman.com" target="_blank" rel="noopener noreferrer">Sanctuary</a></li>
+      <li><a href="https://x.com/TNVOLMAN" target="_blank" rel="noopener noreferrer">@TNVOLMAN</a></li>
+      <li><a href="https://github.com/tnvolman" target="_blank" rel="noopener noreferrer" class="nav-cta">GitHub</a></li>
+    </ul>
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main class="archive-wrap" id="content">
+    <div class="section-header">
+      <h1>NOT FOUND</h1>
+      <div class="section-line"></div>
+    </div>
+    <p class="archive-intro">This page isn't on the blog.</p>
+    <p class="archive-note"><a href="/">Home</a> · <a href="/writing">All writing</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <div class="footer-brand">TNVOLMAN</div>
+          <p class="footer-tagline">"I grew up in a non-Christian home in a trailer court in Knoxville, Tennessee. A deacon kept showing up every Saturday — bringing candy, bringing love, bringing Jesus. It changed the trajectory of my life forever."</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Navigate</div>
+          <ul class="footer-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/writing">Writing</a></li>
+            <li><a href="https://forge.tnvolman.com" target="_blank" rel="noopener noreferrer">The Forge</a></li>
+            <li><a href="https://sanctuary.tnvolman.com" target="_blank" rel="noopener noreferrer">Sanctuary</a></li>
+            <li><a href="https://github.com/tnvolman" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Connect</div>
+          <ul class="footer-list">
+            <li><a href="https://x.com/TNVOLMAN" target="_blank" rel="noopener noreferrer">@TNVOLMAN on X</a></li>
+            <li><a href="https://www.instagram.com/tnv0lman" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.facebook.com/mcclanahans" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="https://www.linkedin.com/in/michael-mcclanahan-49229091/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://forge.tnvolman.com" target="_blank" rel="noopener noreferrer">The Forge App</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">This is the personal blog of Michael McClanahan (TNVOLMAN). All content reflects my own faith, story, and views. It is not affiliated with, endorsed by, or representing any political figure, organization, government entity, company, or financial service. Nothing here is financial advice or a solicitation of any kind.</p>
+        <div class="footer-copy">&copy; 2026 <strong>TNVOLMAN</strong> — Michael McClanahan</div>
+        <div class="footer-identity">
+          Believer<span>·</span>Father<span>·</span>Founder<span>·</span>Developer<span>·</span>Builder
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var button = document.getElementById('hamburger');
+      var nav = document.getElementById('navLinks');
+      if (!button || !nav) return;
+      function setOpen(open) {
+        nav.classList.toggle('open', open);
+        button.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      button.addEventListener('click', function () {
+        setOpen(!nav.classList.contains('open'));
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setOpen(false);
+      });
+    })();
+  </script>
+
+  <script data-goatcounter="https://tnvolman.goatcounter.com/count"
+          async src="https://gc.zgo.at/count.js"></script>
+
+</body>
+</html>

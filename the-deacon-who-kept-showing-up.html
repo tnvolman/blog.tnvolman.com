@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Deacon Who Kept Showing Up — TNVOLMAN</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://blog.tnvolman.com/the-deacon-who-kept-showing-up">
   <meta name="description" content="A reflection on the faithful love of a West Park Baptist deacon that changed the trajectory of my life — and why I'm building for the Church now.">
   <meta property="og:title" content="The Deacon Who Kept Showing Up">
   <meta property="og:description" content="Some Sundays I hid and didn't go. But he kept showing up.">
@@ -216,7 +217,7 @@
       margin-bottom: 28px;
     }
 
-    .post-content p:first-child::first-letter {
+    .post-content > p:first-of-type::first-letter {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 4.2rem;
       float: left;
@@ -327,7 +328,7 @@
       .post-photo img { height: 320px; }
       .post-content { padding: 36px 16px 60px; }
       .author-card, .back-section { padding: 0 16px; }
-      .post-content p:first-child::first-letter { font-size: 3.2rem; }
+      .post-content > p:first-of-type::first-letter { font-size: 3.2rem; }
     }
 
     .brand-mark { width: 28px; height: 28px; border-radius: 6px; vertical-align: middle; margin-right: 10px; flex: none; }
@@ -339,26 +340,126 @@
     p { text-wrap: pretty; }
     @media (max-width: 480px) { .hero-subtitle br { display: none; } }
     .hamburger { background: none; border: 0; color: inherit; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
-    .hamburger:focus-visible, .nav-links a:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+  
+    .site-footer {
+      background: #0a0a0a;
+      border-top: 1px solid var(--border);
+      padding: 56px 24px 36px;
+      margin-top: 24px;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 32px;
+    }
+    .footer-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 52px;
+      letter-spacing: 7px;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .footer-tagline {
+      font-family: 'Merriweather', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.85;
+      max-width: 340px;
+    }
+    .footer-col-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--text-muted);
+    }
+    .footer-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-list a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.18s;
+    }
+    .footer-list a:hover { color: var(--orange); text-decoration: none; }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-disclaimer {
+      flex: 1 0 100%;
+      max-width: 760px;
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.72);
+    }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.55); }
+    .footer-copy strong { color: var(--orange); }
+    .footer-identity {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.3px;
+    }
+    .footer-identity span { color: var(--orange); margin: 0 7px; }
+    .footer-identity span::after { content: "\200B"; }
+    @media (max-width: 960px) {
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .footer-brand-col { grid-column: 1 / -1; }
+    }
+    @media (max-width: 640px) {
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+    }
+
+  
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 12px;
+      z-index: 400;
+      transform: translateY(-160%);
+      background: var(--orange);
+      color: #111;
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    .skip-link:focus { transform: none; }
+    #content { scroll-margin-top: 76px; }
+
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#content">Skip to content</a>
 
   <nav class="navbar">
     <a href="/" class="nav-brand"><img class="brand-mark" src="/mark.svg" alt="" width="28" height="28">TNVOLMAN</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="/writing">Writing</a></li>
-      <li><a href="https://forge.tnvolman.com" target="_blank">The Forge</a></li>
-      <li><a href="https://sanctuary.tnvolman.com" target="_blank">Sanctuary</a></li>
-      <li><a href="https://x.com/TNVOLMAN" target="_blank">@TNVOLMAN</a></li>
-      <li><a href="https://github.com/tnvolman" target="_blank" class="nav-cta">GitHub</a></li>
+      <li><a href="https://forge.tnvolman.com" target="_blank" rel="noopener noreferrer">The Forge</a></li>
+      <li><a href="https://sanctuary.tnvolman.com" target="_blank" rel="noopener noreferrer">Sanctuary</a></li>
+      <li><a href="https://x.com/TNVOLMAN" target="_blank" rel="noopener noreferrer">@TNVOLMAN</a></li>
+      <li><a href="https://github.com/tnvolman" target="_blank" rel="noopener noreferrer" class="nav-cta">GitHub</a></li>
     </ul>
     <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <article>
+  <article id="content">
 
     <div class="hero">
       <span class="category-tag">Faith &amp; Testimony</span>
@@ -428,16 +529,61 @@
     <a class="back-btn" href="/writing">← All Writing</a>
   </div>
 
-<footer style="border-top:1px solid rgba(255,130,0,0.14);margin-top:48px;padding:28px 32px;background:#111111">
-  <p style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:760px;margin:0 auto;text-align:center;font-family:'Inter',sans-serif">This is the personal blog of Michael McClanahan (TNVOLMAN). All content reflects my own faith, story, and views. It is not affiliated with, endorsed by, or representing any political figure, organization, government entity, company, or financial service. Nothing here is financial advice or a solicitation of any kind.</p>
-</footer>
+<footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <div class="footer-brand">TNVOLMAN</div>
+          <p class="footer-tagline">"I grew up in a non-Christian home in a trailer court in Knoxville, Tennessee. A deacon kept showing up every Saturday — bringing candy, bringing love, bringing Jesus. It changed the trajectory of my life forever."</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Navigate</div>
+          <ul class="footer-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/writing">Writing</a></li>
+            <li><a href="https://forge.tnvolman.com" target="_blank" rel="noopener noreferrer">The Forge</a></li>
+            <li><a href="https://sanctuary.tnvolman.com" target="_blank" rel="noopener noreferrer">Sanctuary</a></li>
+            <li><a href="https://github.com/tnvolman" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Connect</div>
+          <ul class="footer-list">
+            <li><a href="https://x.com/TNVOLMAN" target="_blank" rel="noopener noreferrer">@TNVOLMAN on X</a></li>
+            <li><a href="https://www.instagram.com/tnv0lman" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.facebook.com/mcclanahans" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="https://www.linkedin.com/in/michael-mcclanahan-49229091/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://forge.tnvolman.com" target="_blank" rel="noopener noreferrer">The Forge App</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">This is the personal blog of Michael McClanahan (TNVOLMAN). All content reflects my own faith, story, and views. It is not affiliated with, endorsed by, or representing any political figure, organization, government entity, company, or financial service. Nothing here is financial advice or a solicitation of any kind.</p>
+        <div class="footer-copy">&copy; 2026 <strong>TNVOLMAN</strong> — Michael McClanahan</div>
+        <div class="footer-identity">
+          Believer<span>·</span>Father<span>·</span>Founder<span>·</span>Developer<span>·</span>Builder
+        </div>
+      </div>
+    </div>
+  </footer>
 <script data-goatcounter="https://tnvolman.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+        async src="https://gc.zgo.at/count.js"></script>
   <script>
-    document.getElementById('hamburger').addEventListener('click', function() {
-      var open = document.getElementById('navLinks').classList.toggle('open');
-      this.setAttribute('aria-expanded', open);
-    });
+    (function () {
+      var button = document.getElementById('hamburger');
+      var nav = document.getElementById('navLinks');
+      if (!button || !nav) return;
+      function setOpen(open) {
+        nav.classList.toggle('open', open);
+        button.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      button.addEventListener('click', function () {
+        setOpen(!nav.classList.contains('open'));
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setOpen(false);
+      });
+    })();
   </script>
 </body>
 </html>
