@@ -5,14 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TNVOLMAN — Michael McClanahan</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://blog.tnvolman.com/">
   <meta name="description" content="Personal testimony and writing from Michael McClanahan — faith, calling, and the story of a deacon who kept showing up.">
   <meta property="og:title" content="TNVOLMAN — Michael McClanahan">
   <meta property="og:description" content="Personal testimony and writing from Michael McClanahan — faith, calling, and the story of a deacon who kept showing up.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://blog.tnvolman.com/">
   <meta property="og:image" content="https://blog.tnvolman.com/blog_social_media_share_image.jpg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta property="og:image:type" content="image/jpeg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://blog.tnvolman.com/blog_social_media_share_image.jpg">
   <meta name="twitter:title" content="TNVOLMAN — Michael McClanahan">
@@ -440,14 +444,6 @@
     }
 
     .card-date { font-size: 12px; color: var(--text-muted); }
-    .card-coming-soon {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: rgba(255,130,0,0.45);
-    }
-
     .card-read-more {
       font-size: 12px;
       font-weight: 600;
@@ -455,27 +451,6 @@
       transition: gap 0.2s;
     }
     .card-read-more:hover { text-decoration: underline; }
-
-    .load-more-wrap {
-      text-align: center;
-      margin-top: 40px;
-    }
-    .btn-ghost {
-      display: inline-block;
-      border: 1px solid rgba(255,130,0,0.45);
-      color: var(--orange);
-      padding: 11px 34px;
-      border-radius: 5px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.8px;
-      transition: all 0.2s;
-    }
-    .btn-ghost:hover {
-      background: var(--orange);
-      color: var(--white);
-      text-decoration: none;
-    }
 
     .story-note {
       margin-top: 28px;
@@ -594,6 +569,7 @@
       font-size: 13px;
       letter-spacing: 2.5px;
       color: var(--orange);
+      white-space: nowrap;
     }
 
     .recent-item {
@@ -623,7 +599,6 @@
     .recent-title a { color: inherit; }
     .recent-title a:hover { color: var(--orange); text-decoration: none; }
     .recent-date { font-size: 12px; color: var(--text-muted); }
-    .recent-soon { font-size: 12px; color: rgba(255,130,0,0.4); letter-spacing: 1px; text-transform: uppercase; }
 
     .cat-list { list-style: none; }
     .cat-list li {
@@ -688,7 +663,7 @@
       font-family: 'Merriweather', serif;
       font-size: 13px;
       font-style: italic;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.68);
       line-height: 1.85;
       max-width: 340px;
     }
@@ -762,31 +737,60 @@
     .nav-brand { display: inline-flex; align-items: center; }
     .navbar { line-height: 1.6; }
     .navbar a { text-decoration: none; }
-    .scripture-ref { white-space: nowrap; }
     h1, h2, h3, .hero-eyebrow, .hero-subtitle { text-wrap: balance; }
     p { text-wrap: pretty; }
     @media (max-width: 480px) { .hero-subtitle br { display: none; } }
     .hamburger { background: none; border: 0; color: inherit; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
-    .hamburger:focus-visible, .nav-links a:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+  
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 12px;
+      z-index: 400;
+      transform: translateY(-160%);
+      background: var(--orange);
+      color: #111;
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    .skip-link:focus { transform: none; }
+    #content { scroll-margin-top: 76px; }
+
+  
+    .footer-disclaimer {
+      flex: 1 0 100%;
+      max-width: 760px;
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.72);
+    }
+
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#content">Skip to content</a>
 
   <nav class="navbar">
     <a href="/" class="nav-brand"><img class="brand-mark" src="/mark.svg" alt="" width="28" height="28">TNVOLMAN</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="/writing">Writing</a></li>
-      <li><a href="https://forge.tnvolman.com" target="_blank">The Forge</a></li>
-      <li><a href="https://sanctuary.tnvolman.com" target="_blank">Sanctuary</a></li>
-      <li><a href="https://x.com/TNVOLMAN" target="_blank">@TNVOLMAN</a></li>
-      <li><a href="https://github.com/tnvolman" target="_blank" class="nav-cta">GitHub</a></li>
+      <li><a href="https://forge.tnvolman.com" target="_blank" rel="noopener noreferrer">The Forge</a></li>
+      <li><a href="https://sanctuary.tnvolman.com" target="_blank" rel="noopener noreferrer">Sanctuary</a></li>
+      <li><a href="https://x.com/TNVOLMAN" target="_blank" rel="noopener noreferrer">@TNVOLMAN</a></li>
+      <li><a href="https://github.com/tnvolman" target="_blank" rel="noopener noreferrer" class="nav-cta">GitHub</a></li>
     </ul>
     <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <section class="hero">
+  <section class="hero" id="content">
     <div class="hero-bg"></div>
     <div class="hero-gradient"></div>
     <div class="hero-content">
@@ -820,7 +824,7 @@
         <div class="featured-body">
           <div>
             <span class="tag-pill">Faith &amp; Testimony</span>
-            <h2 class="featured-title">The Deacon Who Kept Showing Up</h2>
+            <h3 class="featured-title">The Deacon Who Kept Showing Up</h3>
             <p class="post-excerpt">"Some Sundays I hid and didn't go. But he kept showing up." A reflection on the faithful love of a West Park Baptist deacon that changed the trajectory of my life — and why I'm building for the Church now.</p>
             <div class="post-meta">
               <span>June 12, 2026</span>
@@ -922,25 +926,25 @@
             <span class="about-tag">Developer</span>
           </div>
           <div class="about-links">
-            <a href="https://forge.tnvolman.com" target="_blank" class="about-link">
+            <a href="https://forge.tnvolman.com" target="_blank" rel="noopener noreferrer" class="about-link">
               <span class="link-icon">⚒</span> The Forge
             </a>
-            <a href="https://sanctuary.tnvolman.com" target="_blank" class="about-link">
+            <a href="https://sanctuary.tnvolman.com" target="_blank" rel="noopener noreferrer" class="about-link">
               <span class="link-icon">⛪</span> Sanctuary
             </a>
-            <a href="https://x.com/TNVOLMAN" target="_blank" class="about-link">
+            <a href="https://x.com/TNVOLMAN" target="_blank" rel="noopener noreferrer" class="about-link">
               <span class="link-icon">✦</span> @TNVOLMAN on X
             </a>
-            <a href="https://www.instagram.com/tnv0lman" target="_blank" class="about-link">
+            <a href="https://www.instagram.com/tnv0lman" target="_blank" rel="noopener noreferrer" class="about-link">
               <span class="link-icon">📷</span> Instagram
             </a>
-            <a href="https://www.facebook.com/mcclanahans" target="_blank" class="about-link">
+            <a href="https://www.facebook.com/mcclanahans" target="_blank" rel="noopener noreferrer" class="about-link">
               <span class="link-icon">📘</span> Facebook
             </a>
-            <a href="https://www.linkedin.com/in/michael-mcclanahan-49229091/" target="_blank" class="about-link">
+            <a href="https://www.linkedin.com/in/michael-mcclanahan-49229091/" target="_blank" rel="noopener noreferrer" class="about-link">
               <span class="link-icon">💼</span> LinkedIn
             </a>
-            <a href="https://github.com/tnvolman" target="_blank" class="about-link">
+            <a href="https://github.com/tnvolman" target="_blank" rel="noopener noreferrer" class="about-link">
               <span class="link-icon">⌨</span> GitHub
             </a>
           </div>
@@ -1036,25 +1040,26 @@
         <div>
           <div class="footer-col-title">Navigate</div>
           <ul class="footer-list">
+            <li><a href="/">Home</a></li>
             <li><a href="/writing">Writing</a></li>
-            <li><a href="https://forge.tnvolman.com" target="_blank">The Forge</a></li>
-            <li><a href="https://sanctuary.tnvolman.com" target="_blank">Sanctuary</a></li>
-            <li><a href="https://github.com/tnvolman" target="_blank">GitHub</a></li>
+            <li><a href="https://forge.tnvolman.com" target="_blank" rel="noopener noreferrer">The Forge</a></li>
+            <li><a href="https://sanctuary.tnvolman.com" target="_blank" rel="noopener noreferrer">Sanctuary</a></li>
+            <li><a href="https://github.com/tnvolman" target="_blank" rel="noopener noreferrer">GitHub</a></li>
           </ul>
         </div>
         <div>
           <div class="footer-col-title">Connect</div>
           <ul class="footer-list">
-            <li><a href="https://x.com/TNVOLMAN" target="_blank">@TNVOLMAN on X</a></li>
-            <li><a href="https://www.instagram.com/tnv0lman" target="_blank">Instagram</a></li>
-            <li><a href="https://www.facebook.com/mcclanahans" target="_blank">Facebook</a></li>
-            <li><a href="https://www.linkedin.com/in/michael-mcclanahan-49229091/" target="_blank">LinkedIn</a></li>
-            <li><a href="https://forge.tnvolman.com" target="_blank">The Forge App</a></li>
+            <li><a href="https://x.com/TNVOLMAN" target="_blank" rel="noopener noreferrer">@TNVOLMAN on X</a></li>
+            <li><a href="https://www.instagram.com/tnv0lman" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.facebook.com/mcclanahans" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="https://www.linkedin.com/in/michael-mcclanahan-49229091/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://forge.tnvolman.com" target="_blank" rel="noopener noreferrer">The Forge App</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <div class="footer-copy" style="margin-bottom:14px;line-height:1.7;max-width:760px">This is the personal blog of Michael McClanahan (TNVOLMAN). All content reflects my own faith, story, and views. It is not affiliated with, endorsed by, or representing any political figure, organization, government entity, company, or financial service. Nothing here is financial advice or a solicitation of any kind.</div>
+        <p class="footer-disclaimer">This is the personal blog of Michael McClanahan (TNVOLMAN). All content reflects my own faith, story, and views. It is not affiliated with, endorsed by, or representing any political figure, organization, government entity, company, or financial service. Nothing here is financial advice or a solicitation of any kind.</p>
         <div class="footer-copy">&copy; 2026 <strong>TNVOLMAN</strong> — Michael McClanahan</div>
         <div class="footer-identity">
           Believer<span>·</span>Father<span>·</span>Founder<span>·</span>Developer<span>·</span>Builder
@@ -1064,15 +1069,26 @@
   </footer>
 
   <script>
-    document.getElementById('hamburger').addEventListener('click', function() {
-      var open = document.getElementById('navLinks').classList.toggle('open');
-      this.setAttribute('aria-expanded', open);
-    });
+    (function () {
+      var button = document.getElementById('hamburger');
+      var nav = document.getElementById('navLinks');
+      if (!button || !nav) return;
+      function setOpen(open) {
+        nav.classList.toggle('open', open);
+        button.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      button.addEventListener('click', function () {
+        setOpen(!nav.classList.contains('open'));
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setOpen(false);
+      });
+    })();
   </script>
 
 
   <script data-goatcounter="https://tnvolman.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
+          async src="https://gc.zgo.at/count.js"></script>
 
 </body>
 </html>
